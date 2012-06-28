@@ -1,0 +1,454 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		85808DE7159C691E00653231 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85808DE6159C691E00653231 /* Cocoa.framework */; };
+		85808DF1159C691E00653231 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 85808DEF159C691E00653231 /* InfoPlist.strings */; };
+		85808DF3159C691E00653231 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85808DF2159C691E00653231 /* main.m */; };
+		85808DF7159C691E00653231 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 85808DF5159C691E00653231 /* Credits.rtf */; };
+		85808DFA159C691E00653231 /* CIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85808DF9159C691E00653231 /* CIAppDelegate.m */; };
+		85808DFD159C691E00653231 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85808DFB159C691E00653231 /* MainMenu.xib */; };
+		85808E05159C691E00653231 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85808E04159C691E00653231 /* SenTestingKit.framework */; };
+		85808E06159C691E00653231 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85808DE6159C691E00653231 /* Cocoa.framework */; };
+		85808E0E159C691E00653231 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 85808E0C159C691E00653231 /* InfoPlist.strings */; };
+		85808E11159C691E00653231 /* CookieTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85808E10159C691E00653231 /* CookieTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		85808E07159C691E00653231 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85808DD9159C691E00653231 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85808DE1159C691E00653231;
+			remoteInfo = Cookie;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		85808DE2159C691E00653231 /* Cookie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cookie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		85808DE6159C691E00653231 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		85808DE9159C691E00653231 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		85808DEA159C691E00653231 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		85808DEB159C691E00653231 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		85808DEE159C691E00653231 /* Cookie-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Cookie-Info.plist"; sourceTree = "<group>"; };
+		85808DF0159C691E00653231 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		85808DF2159C691E00653231 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		85808DF4159C691E00653231 /* Cookie-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cookie-Prefix.pch"; sourceTree = "<group>"; };
+		85808DF6159C691E00653231 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		85808DF8159C691E00653231 /* CIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CIAppDelegate.h; sourceTree = "<group>"; };
+		85808DF9159C691E00653231 /* CIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CIAppDelegate.m; sourceTree = "<group>"; };
+		85808DFC159C691E00653231 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		85808E03159C691E00653231 /* CookieTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookieTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		85808E04159C691E00653231 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		85808E0B159C691E00653231 /* CookieTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CookieTests-Info.plist"; sourceTree = "<group>"; };
+		85808E0D159C691E00653231 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		85808E0F159C691E00653231 /* CookieTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookieTests.h; sourceTree = "<group>"; };
+		85808E10159C691E00653231 /* CookieTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookieTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		85808DDF159C691E00653231 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85808DE7159C691E00653231 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85808DFF159C691E00653231 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85808E05159C691E00653231 /* SenTestingKit.framework in Frameworks */,
+				85808E06159C691E00653231 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		85808DD7159C691E00653231 = {
+			isa = PBXGroup;
+			children = (
+				85808DEC159C691E00653231 /* Cookie */,
+				85808E09159C691E00653231 /* CookieTests */,
+				85808DE5159C691E00653231 /* Frameworks */,
+				85808DE3159C691E00653231 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		85808DE3159C691E00653231 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				85808DE2159C691E00653231 /* Cookie.app */,
+				85808E03159C691E00653231 /* CookieTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		85808DE5159C691E00653231 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				85808DE6159C691E00653231 /* Cocoa.framework */,
+				85808E04159C691E00653231 /* SenTestingKit.framework */,
+				85808DE8159C691E00653231 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		85808DE8159C691E00653231 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				85808DE9159C691E00653231 /* AppKit.framework */,
+				85808DEA159C691E00653231 /* CoreData.framework */,
+				85808DEB159C691E00653231 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		85808DEC159C691E00653231 /* Cookie */ = {
+			isa = PBXGroup;
+			children = (
+				85808DF8159C691E00653231 /* CIAppDelegate.h */,
+				85808DF9159C691E00653231 /* CIAppDelegate.m */,
+				85808DFB159C691E00653231 /* MainMenu.xib */,
+				85808DED159C691E00653231 /* Supporting Files */,
+			);
+			path = Cookie;
+			sourceTree = "<group>";
+		};
+		85808DED159C691E00653231 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				85808DEE159C691E00653231 /* Cookie-Info.plist */,
+				85808DEF159C691E00653231 /* InfoPlist.strings */,
+				85808DF2159C691E00653231 /* main.m */,
+				85808DF4159C691E00653231 /* Cookie-Prefix.pch */,
+				85808DF5159C691E00653231 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		85808E09159C691E00653231 /* CookieTests */ = {
+			isa = PBXGroup;
+			children = (
+				85808E0F159C691E00653231 /* CookieTests.h */,
+				85808E10159C691E00653231 /* CookieTests.m */,
+				85808E0A159C691E00653231 /* Supporting Files */,
+			);
+			path = CookieTests;
+			sourceTree = "<group>";
+		};
+		85808E0A159C691E00653231 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				85808E0B159C691E00653231 /* CookieTests-Info.plist */,
+				85808E0C159C691E00653231 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		85808DE1159C691E00653231 /* Cookie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85808E14159C691E00653231 /* Build configuration list for PBXNativeTarget "Cookie" */;
+			buildPhases = (
+				85808DDE159C691E00653231 /* Sources */,
+				85808DDF159C691E00653231 /* Frameworks */,
+				85808DE0159C691E00653231 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cookie;
+			productName = Cookie;
+			productReference = 85808DE2159C691E00653231 /* Cookie.app */;
+			productType = "com.apple.product-type.application";
+		};
+		85808E02159C691E00653231 /* CookieTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85808E17159C691E00653231 /* Build configuration list for PBXNativeTarget "CookieTests" */;
+			buildPhases = (
+				85808DFE159C691E00653231 /* Sources */,
+				85808DFF159C691E00653231 /* Frameworks */,
+				85808E00159C691E00653231 /* Resources */,
+				85808E01159C691E00653231 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85808E08159C691E00653231 /* PBXTargetDependency */,
+			);
+			name = CookieTests;
+			productName = CookieTests;
+			productReference = 85808E03159C691E00653231 /* CookieTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		85808DD9159C691E00653231 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CI;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = EPITA;
+			};
+			buildConfigurationList = 85808DDC159C691E00653231 /* Build configuration list for PBXProject "Cookie" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 85808DD7159C691E00653231;
+			productRefGroup = 85808DE3159C691E00653231 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				85808DE1159C691E00653231 /* Cookie */,
+				85808E02159C691E00653231 /* CookieTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		85808DE0159C691E00653231 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85808DF1159C691E00653231 /* InfoPlist.strings in Resources */,
+				85808DF7159C691E00653231 /* Credits.rtf in Resources */,
+				85808DFD159C691E00653231 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85808E00159C691E00653231 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85808E0E159C691E00653231 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		85808E01159C691E00653231 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		85808DDE159C691E00653231 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85808DF3159C691E00653231 /* main.m in Sources */,
+				85808DFA159C691E00653231 /* CIAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85808DFE159C691E00653231 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85808E11159C691E00653231 /* CookieTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		85808E08159C691E00653231 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85808DE1159C691E00653231 /* Cookie */;
+			targetProxy = 85808E07159C691E00653231 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		85808DEF159C691E00653231 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85808DF0159C691E00653231 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		85808DF5159C691E00653231 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85808DF6159C691E00653231 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		85808DFB159C691E00653231 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85808DFC159C691E00653231 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		85808E0C159C691E00653231 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85808E0D159C691E00653231 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		85808E12159C691E00653231 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		85808E13159C691E00653231 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		85808E15159C691E00653231 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cookie/Cookie-Prefix.pch";
+				INFOPLIST_FILE = "Cookie/Cookie-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		85808E16159C691E00653231 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cookie/Cookie-Prefix.pch";
+				INFOPLIST_FILE = "Cookie/Cookie-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		85808E18159C691E00653231 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Cookie.app/Contents/MacOS/Cookie";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cookie/Cookie-Prefix.pch";
+				INFOPLIST_FILE = "CookieTests/CookieTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		85808E19159C691E00653231 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Cookie.app/Contents/MacOS/Cookie";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cookie/Cookie-Prefix.pch";
+				INFOPLIST_FILE = "CookieTests/CookieTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		85808DDC159C691E00653231 /* Build configuration list for PBXProject "Cookie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85808E12159C691E00653231 /* Debug */,
+				85808E13159C691E00653231 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85808E14159C691E00653231 /* Build configuration list for PBXNativeTarget "Cookie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85808E15159C691E00653231 /* Debug */,
+				85808E16159C691E00653231 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		85808E17159C691E00653231 /* Build configuration list for PBXNativeTarget "CookieTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85808E18159C691E00653231 /* Debug */,
+				85808E19159C691E00653231 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 85808DD9159C691E00653231 /* Project object */;
+}
