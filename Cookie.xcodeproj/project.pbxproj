@@ -17,8 +17,8 @@
 		85808E06159C691E00653231 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85808DE6159C691E00653231 /* Cocoa.framework */; };
 		85808E0E159C691E00653231 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 85808E0C159C691E00653231 /* InfoPlist.strings */; };
 		85808E11159C691E00653231 /* CookieTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85808E10159C691E00653231 /* CookieTests.m */; };
-		85808E20159C767D00653231 /* toolbar_add.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 85808E1E159C767D00653231 /* toolbar_add.tiff */; };
-		85808E21159C767D00653231 /* toolbar_delete.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 85808E1F159C767D00653231 /* toolbar_delete.tiff */; };
+		E9A16E98159C93E600989D66 /* toolbar_add.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E9A16E96159C93E600989D66 /* toolbar_add.tiff */; };
+		E9A16E99159C93E600989D66 /* toolbar_delete.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E9A16E97159C93E600989D66 /* toolbar_delete.tiff */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +51,8 @@
 		85808E0D159C691E00653231 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		85808E0F159C691E00653231 /* CookieTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookieTests.h; sourceTree = "<group>"; };
 		85808E10159C691E00653231 /* CookieTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookieTests.m; sourceTree = "<group>"; };
-		85808E1E159C767D00653231 /* toolbar_add.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = toolbar_add.tiff; path = ../../Downloads/MoreAppKit/toolbar_add.tiff; sourceTree = "<group>"; };
-		85808E1F159C767D00653231 /* toolbar_delete.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = toolbar_delete.tiff; path = ../../Downloads/MoreAppKit/toolbar_delete.tiff; sourceTree = "<group>"; };
+		E9A16E96159C93E600989D66 /* toolbar_add.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = toolbar_add.tiff; path = Cookie/images/toolbar_add.tiff; sourceTree = "<group>"; };
+		E9A16E97159C93E600989D66 /* toolbar_delete.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = toolbar_delete.tiff; path = Cookie/images/toolbar_delete.tiff; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +79,8 @@
 		85808DD7159C691E00653231 = {
 			isa = PBXGroup;
 			children = (
-				85808E1E159C767D00653231 /* toolbar_add.tiff */,
-				85808E1F159C767D00653231 /* toolbar_delete.tiff */,
+				E9A16E96159C93E600989D66 /* toolbar_add.tiff */,
+				E9A16E97159C93E600989D66 /* toolbar_delete.tiff */,
 				85808DEC159C691E00653231 /* Cookie */,
 				85808E09159C691E00653231 /* CookieTests */,
 				85808DE5159C691E00653231 /* Frameworks */,
@@ -234,8 +234,8 @@
 				85808DF1159C691E00653231 /* InfoPlist.strings in Resources */,
 				85808DF7159C691E00653231 /* Credits.rtf in Resources */,
 				85808DFD159C691E00653231 /* MainMenu.xib in Resources */,
-				85808E20159C767D00653231 /* toolbar_add.tiff in Resources */,
-				85808E21159C767D00653231 /* toolbar_delete.tiff in Resources */,
+				E9A16E98159C93E600989D66 /* toolbar_add.tiff in Resources */,
+				E9A16E99159C93E600989D66 /* toolbar_delete.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

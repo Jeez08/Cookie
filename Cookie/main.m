@@ -10,13 +10,13 @@
 
 int main(int argc, char *argv[])
 {
-    NSFileManager * fileManager = [NSFileManager defaultManager];
-    if (![fileManager createDirectoryAtPath:@"test" withIntermediateDirectories:YES attributes:nil error:nil])
-        NSLog(@"FAILEOFJRIGJIRDGJDIGDFKG");
+    //NSFileManager * fileManager = [NSFileManager defaultManager];
+    //if (![fileManager createDirectoryAtPath:@"test" withIntermediateDirectories:YES attributes:nil //error:nil])
+        //NSLog(@"FAILEOFJRIGJIRDGJDIGDFKG");
     
-    NSCoder * encoder = [NSCoder new];
-    NSArray * array = [NSArray array];
-    [array encodeWithCoder:encoder];
+    //NSCoder * encoder = [NSCoder new];
+    //NSArray * array = [NSArray array];
+    //[array encodeWithCoder:encoder];
     
     return NSApplicationMain(argc, (const char **)argv);
 }
