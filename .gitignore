@@ -10,6 +10,7 @@ build/*
 !default.perspectivev3
 *.xcworkspace
 !default.xcworkspace
-xcuserdata
+*.xcuserdata
+xcuderdata/
 profile
 *.moved-aside
