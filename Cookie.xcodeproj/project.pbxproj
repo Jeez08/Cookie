@@ -17,6 +17,11 @@
 		85C83F0E15A38C600037E342 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C83EEE15A38C600037E342 /* Cocoa.framework */; };
 		85C83F1615A38C600037E342 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 85C83F1415A38C600037E342 /* InfoPlist.strings */; };
 		85C83F1915A38C600037E342 /* CookieTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C83F1815A38C600037E342 /* CookieTests.m */; };
+		85C83F4115A3A9100037E342 /* add_recipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 85C83F3D15A3A9100037E342 /* add_recipe.png */; };
+		85C83F4215A3A9100037E342 /* del_recipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 85C83F3E15A3A9100037E342 /* del_recipe.png */; };
+		85C83F4315A3A9100037E342 /* edit_recipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 85C83F3F15A3A9100037E342 /* edit_recipe.png */; };
+		85C83F4415A3A9100037E342 /* Recipe-Book-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 85C83F4015A3A9100037E342 /* Recipe-Book-icon.png */; };
+		F14E9E6415A3A32500216FA6 /* CIWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F14E9E6315A3A32500216FA6 /* CIWindowController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,12 @@
 		85C83F1515A38C600037E342 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		85C83F1715A38C600037E342 /* CookieTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookieTests.h; sourceTree = "<group>"; };
 		85C83F1815A38C600037E342 /* CookieTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookieTests.m; sourceTree = "<group>"; };
+		85C83F3D15A3A9100037E342 /* add_recipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_recipe.png; sourceTree = "<group>"; };
+		85C83F3E15A3A9100037E342 /* del_recipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = del_recipe.png; sourceTree = "<group>"; };
+		85C83F3F15A3A9100037E342 /* edit_recipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_recipe.png; sourceTree = "<group>"; };
+		85C83F4015A3A9100037E342 /* Recipe-Book-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Recipe-Book-icon.png"; sourceTree = "<group>"; };
+		F14E9E6215A3A32500216FA6 /* CIWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIWindowController.h; sourceTree = "<group>"; };
+		F14E9E6315A3A32500216FA6 /* CIWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIWindowController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +86,10 @@
 		85C83EDF15A38C600037E342 = {
 			isa = PBXGroup;
 			children = (
+				85C83F3D15A3A9100037E342 /* add_recipe.png */,
+				85C83F3E15A3A9100037E342 /* del_recipe.png */,
+				85C83F3F15A3A9100037E342 /* edit_recipe.png */,
+				85C83F4015A3A9100037E342 /* Recipe-Book-icon.png */,
 				85C83EF415A38C600037E342 /* Cookie */,
 				85C83F1115A38C600037E342 /* CookieTests */,
 				85C83EED15A38C600037E342 /* Frameworks */,
@@ -117,6 +132,8 @@
 				85C83F0015A38C600037E342 /* CIAppDelegate.h */,
 				85C83F0115A38C600037E342 /* CIAppDelegate.m */,
 				85C83F0315A38C600037E342 /* MainMenu.xib */,
+				F14E9E6215A3A32500216FA6 /* CIWindowController.h */,
+				F14E9E6315A3A32500216FA6 /* CIWindowController.m */,
 				85C83EF515A38C600037E342 /* Supporting Files */,
 			);
 			path = Cookie;
@@ -228,6 +245,10 @@
 				85C83EF915A38C600037E342 /* InfoPlist.strings in Resources */,
 				85C83EFF15A38C600037E342 /* Credits.rtf in Resources */,
 				85C83F0515A38C600037E342 /* MainMenu.xib in Resources */,
+				85C83F4115A3A9100037E342 /* add_recipe.png in Resources */,
+				85C83F4215A3A9100037E342 /* del_recipe.png in Resources */,
+				85C83F4315A3A9100037E342 /* edit_recipe.png in Resources */,
+				85C83F4415A3A9100037E342 /* Recipe-Book-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +285,7 @@
 			files = (
 				85C83EFB15A38C600037E342 /* main.m in Sources */,
 				85C83F0215A38C600037E342 /* CIAppDelegate.m in Sources */,
+				F14E9E6415A3A32500216FA6 /* CIWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,9 +363,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.6;
 			};
 			name = Debug;
 		};
@@ -361,8 +383,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				SDKROOT = macosx;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx10.6;
 			};
 			name = Release;
 		};
@@ -439,6 +461,7 @@
 				85C83F1E15A38C600037E342 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		85C83F1F15A38C600037E342 /* Build configuration list for PBXNativeTarget "CookieTests" */ = {
 			isa = XCConfigurationList;
@@ -447,6 +470,7 @@
 				85C83F2115A38C600037E342 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
