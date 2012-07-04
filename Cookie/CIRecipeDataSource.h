@@ -7,9 +7,17 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "CIRecipe.h"
 
 @interface CIRecipeDataSource : NSObject<NSTableViewDataSource, NSTableViewDelegate>
 
-@property (nonatomic, retain) NSDictionary *recipeList;
+#define MODIDCHANGE @"RecipeChange"
+
+@property (nonatomic, retain) NSMutableArray *recipeList;
+
+- (void) addRecipeWithName:(NSString*)name category:(NSString*)category summary:(NSString*)summary picture:(NSImage*)picture rating:(NSNumber*)rating ingredients:(NSArray*)ingredients recipe:(NSData*)recipe;
+- (void) deleteRecipeAtIndex:(NSInteger)row;
+
+- (void) dealloc;
 
 @end

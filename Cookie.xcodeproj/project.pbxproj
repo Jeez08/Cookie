@@ -24,6 +24,7 @@
 		85C83F4C15A3BD450037E342 /* CIRecipeDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C83F4B15A3BD450037E342 /* CIRecipeDataSource.m */; };
 		85C83F5015A3BEE40037E342 /* CIRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C83F4F15A3BEE40037E342 /* CIRecipe.m */; };
 		85C83F5315A3BF7D0037E342 /* CIIngredient.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C83F5215A3BF7D0037E342 /* CIIngredient.m */; };
+		E9F046DE15A4984F003F2456 /* CIRecipeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F046DD15A4984F003F2456 /* CIRecipeCell.m */; };
 		F14E9E6415A3A32500216FA6 /* CIWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F14E9E6315A3A32500216FA6 /* CIWindowController.m */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,8 @@
 		85C83F4F15A3BEE40037E342 /* CIRecipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIRecipe.m; sourceTree = "<group>"; };
 		85C83F5115A3BF7D0037E342 /* CIIngredient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIIngredient.h; sourceTree = "<group>"; };
 		85C83F5215A3BF7D0037E342 /* CIIngredient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIIngredient.m; sourceTree = "<group>"; };
+		E9F046DC15A4984F003F2456 /* CIRecipeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIRecipeCell.h; sourceTree = "<group>"; };
+		E9F046DD15A4984F003F2456 /* CIRecipeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIRecipeCell.m; sourceTree = "<group>"; };
 		F14E9E6215A3A32500216FA6 /* CIWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIWindowController.h; sourceTree = "<group>"; };
 		F14E9E6315A3A32500216FA6 /* CIWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIWindowController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +141,8 @@
 		85C83EF415A38C600037E342 /* Cookie */ = {
 			isa = PBXGroup;
 			children = (
+				E9F046DC15A4984F003F2456 /* CIRecipeCell.h */,
+				E9F046DD15A4984F003F2456 /* CIRecipeCell.m */,
 				85C83F0015A38C600037E342 /* CIAppDelegate.h */,
 				85C83F0115A38C600037E342 /* CIAppDelegate.m */,
 				85C83F0315A38C600037E342 /* MainMenu.xib */,
@@ -304,6 +309,7 @@
 				85C83F4C15A3BD450037E342 /* CIRecipeDataSource.m in Sources */,
 				85C83F5015A3BEE40037E342 /* CIRecipe.m in Sources */,
 				85C83F5315A3BF7D0037E342 /* CIIngredient.m in Sources */,
+				E9F046DE15A4984F003F2456 /* CIRecipeCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
