@@ -10,4 +10,7 @@
 
 @interface CIWindowController : NSWindowController
 
+@property (assign) IBOutlet NSTableView * tableView;
+@property (assign) IBOutlet NSWindow *window;
+
 @end

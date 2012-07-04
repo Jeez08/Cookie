@@ -15,7 +15,7 @@
 - (id) init {
     self = [super init];
     if (self) {
-        _recipeList = [NSMutableArray array];
+        self.recipeList = [NSMutableArray array];
     }
     return self;
 }
@@ -25,7 +25,7 @@
     [super dealloc];
 }
 
-- (void) addRecipeWithName:(NSString *)name category:(NSString *)category summary:(NSString *)summary picture:(NSImage *)picture rating:(NSNumber *)rating ingredients:(NSArray *)ingredients recipe:(NSData *)recipe {
+- (void) addRecipeWithName:(NSString *)name category:(NSString *)category summary:(NSString *)summary picture:(NSImage *)picture rating:(NSNumber *)rating ingredients:(NSTableView *)ingredients recipe:(NSTextField*)recipe {
     CIRecipe *r = [CIRecipe recipeWithName:name category:category summary:summary picture:picture rating:rating ingredients:ingredients recipe:recipe];
     [_recipeList addObject:r];
     [[NSNotificationCenter defaultCenter] postNotificationName:MODIDCHANGE object:self];

@@ -10,6 +10,6 @@
 
 @interface CIRecipeCell : NSTableView
 
-//@property (nonatomic, retain) IBOutlet NSTextField * detailsField;
+@property (nonatomic, retain) IBOutlet NSNumber * rating;
 
 @end

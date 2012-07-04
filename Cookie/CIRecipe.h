@@ -16,11 +16,11 @@
 @property (nonatomic, retain) NSString *Summary;
 @property (nonatomic, retain) NSImage *Picture;
 @property (nonatomic, retain) NSNumber *Rating;
-@property (nonatomic, retain) NSArray *Ingredients;
-@property (nonatomic, retain) NSData *Recipe;
+@property (nonatomic, retain) NSTableView *Ingredients;
+@property (nonatomic, retain) NSTextField *Recipe;
 
-- (id) initWithName:(NSString*)name category:(NSString*)category summary:(NSString*)summary picture:(NSImage*)picture rating:(NSNumber*)rating ingredients:(NSArray*)ingredients recipe:(NSData*)recipe;
-+ (id) recipeWithName:(NSString*)name category:(NSString*)category summary:(NSString*)summary picture:(NSImage*)picture rating:(NSNumber*)rating ingredients:(NSArray*)ingredients recipe:(NSData*)recipe;
+- (id) initWithName:(NSString*)name category:(NSString*)category summary:(NSString*)summary picture:(NSImage*)picture rating:(NSNumber*)rating ingredients:(NSTableView*)ingredients recipe:(NSTextField*)recipe;
++ (id) recipeWithName:(NSString*)name category:(NSString*)category summary:(NSString*)summary picture:(NSImage*)picture rating:(NSNumber*)rating ingredients:(NSTableView*)ingredients recipe:(NSTextField*)recipe;
 
 - (void)dealloc;
 

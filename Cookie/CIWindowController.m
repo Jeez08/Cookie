@@ -10,4 +10,7 @@
 
 @implementation CIWindowController
 
+@synthesize tableView;
+@synthesize window;
+
 @end

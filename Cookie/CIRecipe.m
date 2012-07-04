@@ -19,7 +19,7 @@
 @synthesize Ingredients = _Ingredients;
 @synthesize Recipe = _Recipe;
 
-- (id) initWithName:(NSString *)name category:(NSString *)category summary:(NSString *)summary picture:(NSImage *)picture rating:(NSNumber *)rating ingredients:(NSArray *)ingredients recipe:(NSData *)recipe {
+- (id) initWithName:(NSString *)name category:(NSString *)category summary:(NSString *)summary picture:(NSImage *)picture rating:(NSNumber *)rating ingredients:(NSTableView *)ingredients recipe:(NSTextField *)recipe {
     
     self = [super init];
     
@@ -37,7 +37,7 @@
     return self;
 }
 
-+ (id) recipeWithName:(NSString *)name category:(NSString *)category summary:(NSString *)summary picture:(NSImage *)picture rating:(NSNumber *)rating ingredients:(NSArray *)ingredients recipe:(NSData *)recipe {
++ (id) recipeWithName:(NSString *)name category:(NSString *)category summary:(NSString *)summary picture:(NSImage *)picture rating:(NSNumber *)rating ingredients:(NSTableView *)ingredients recipe:(NSTextField *)recipe {
     
     return [[[self alloc] initWithName:name category:category summary:summary picture:picture rating:rating ingredients:ingredients recipe:recipe] autorelease];
 }

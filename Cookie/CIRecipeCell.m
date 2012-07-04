@@ -10,4 +10,6 @@
 
 @implementation CIRecipeCell
 
+@synthesize rating;
+
 @end
