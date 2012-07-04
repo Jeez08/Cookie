@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CIRecipeCell : NSTableCellView
+@interface CIRecipeCell : NSTableView
 
 //@property (nonatomic, retain) IBOutlet NSTextField * detailsField;
 
