@@ -19,4 +19,40 @@
 @synthesize Ingredients = _Ingredients;
 @synthesize Recipe = _Recipe;
 
+- (id) initWithName:(NSString *)name category:(NSString *)category summary:(NSString *)summary picture:(NSImage *)picture rating:(NSNumber *)rating ingredients:(NSArray *)ingredients recipe:(NSData *)recipe {
+    
+    self = [super init];
+    
+    if (nil != self) {
+        _Name = name;
+        _UniqueId = 0;
+        _Category = category;
+        _Summary = summary;
+        _Picture = picture;
+        _Rating = rating;
+        _Ingredients = ingredients;
+        _Recipe = recipe;
+    }
+    
+    return self;
+}
+
++ (id) recipeWithName:(NSString *)name category:(NSString *)category summary:(NSString *)summary picture:(NSImage *)picture rating:(NSNumber *)rating ingredients:(NSArray *)ingredients recipe:(NSData *)recipe {
+    
+    return [[[self alloc] initWithName:name category:category summary:summary picture:picture rating:rating ingredients:ingredients recipe:recipe] autorelease];
+}
+
+- (void) dealloc {
+    _Name = nil;
+    _UniqueId = nil;
+    _Category = nil;
+    _Summary = nil;
+    _Picture = nil;
+    _Rating = nil;
+    _Ingredients = nil;
+    _Recipe = nil;
+    
+    [super dealloc];
+}
+
 @end
