@@ -11,6 +11,7 @@
 @interface CIAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+
 @property (unsafe_unretained) IBOutlet NSToolbarItem *addRecipeButton;
 @property (unsafe_unretained) IBOutlet NSWindow *addRecipeWindow;
 @property (unsafe_unretained) IBOutlet NSButton *cancelAddRecipe;
@@ -30,5 +31,7 @@
 - (IBAction)openAddRecipe:(id)sender;
 
 - (IBAction)openEditRecipe:(id)sender;
+
+- (IBAction)closeEditRecipe:(id)sender;
 
 @end

@@ -11,6 +11,15 @@
 @implementation CIAppDelegate
 
 @synthesize window = _window;
+@synthesize addRecipeButton;
+@synthesize addRecipeWindow;
+@synthesize editRecipeWindow;
+@synthesize editRecipeButton;
+@synthesize cancelAddRecipe;
+@synthesize addIngredientButton;
+@synthesize addIngredientWindow;
+@synthesize cancelAddIngredient;
+@synthesize cancelEditRecipeButton;
 
 - (void)dealloc
 {
@@ -21,16 +30,6 @@
 {
     // Insert code here to initialize your application
 }
-
-@synthesize addRecipeButton;
-@synthesize addRecipeWindow;
-@synthesize editRecipeWindow;
-@synthesize editRecipeButton;
-@synthesize cancelAddRecipe;
-@synthesize addIngredientButton;
-@synthesize addIngredientWindow;
-@synthesize cancelAddIngredient;
-@synthesize cancelEditRecipeButton;
 
 - (IBAction)closeAddRecipe:(id)sender {
     if([addRecipeWindow isVisible] )
@@ -54,11 +53,22 @@
 }
 
 - (IBAction)openEditRecipe:(id)sender {
-    if (! [editRecipeButton isVisible]) {
-        [[editRecipeWindow standardWindowButton:NSWindowCloseButton] setHidden:TRUE];
-        [[editRecipeWindow standardWindowButton:NSWindowMiniaturizeButton] setHidden:TRUE];
-        [[editRecipeWindow standardWindowButton:NSWindowZoomButton] setHidden:TRUE];
+    if (! [editRecipeWindow isVisible]) 
+    {
+        [[editRecipeWindow standardWindowButton:NSWindowCloseButton]
+         setHidden:TRUE];
+        [[editRecipeWindow standardWindowButton:NSWindowMiniaturizeButton] 
+         setHidden:TRUE];
+        [[editRecipeWindow standardWindowButton:NSWindowZoomButton] 
+         setHidden:TRUE];
         [editRecipeWindow makeKeyAndOrderFront:sender];
+    }
+}
+
+- (IBAction)closeEditRecipe:(id)sender {
+    if ([editRecipeWindow isVisible]) {
+        [editRecipeWindow setReleasedWhenClosed:FALSE];
+        [editRecipeWindow close];
     }
 }
 
