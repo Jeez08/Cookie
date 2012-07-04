@@ -7,13 +7,28 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "CIRecipeDataSource.h"
 
 @interface CIAddSheetController : NSWindowController
 
+// Main List
+@property (assign) IBOutlet NSTableView *recipeList;
+
+@property (assign) IBOutlet NSTextField *name;
+@property (assign) IBOutlet NSTextField *summary;
+@property (assign) IBOutlet NSComboBox *category;
+@property (assign) IBOutlet NSImageView *picture;
+@property (assign) IBOutlet NSTableView *ingredients;
+@property (assign) IBOutlet NSTextField *recipe;
+
+// Main Window
 @property (assign) IBOutlet NSWindow *window;
+// The Sheet
 @property (assign) IBOutlet NSWindow *sheet;
 
 -(IBAction)open:(id)sender;
 -(IBAction)close:(id)sender;
+
+-(IBAction)addRecipe:(id)sender;
 
 @end

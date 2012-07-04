@@ -2231,9 +2231,6 @@
 			<object class="NSCustomObject" id="870073383">
 				<string key="NSClassName">CIWindowController</string>
 			</object>
-			<object class="NSCustomObject" id="337290147">
-				<string key="NSClassName">CIAddWindowController</string>
-			</object>
 			<object class="NSCustomObject" id="180857069">
 				<string key="NSClassName">CIAddSheetController</string>
 			</object>
@@ -4735,86 +4732,6 @@
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">window</string>
-						<reference key="source" ref="337290147"/>
-						<reference key="destination" ref="644725426"/>
-					</object>
-					<int key="connectionID">921</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">summary</string>
-						<reference key="source" ref="337290147"/>
-						<reference key="destination" ref="993754652"/>
-					</object>
-					<int key="connectionID">922</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">recipe</string>
-						<reference key="source" ref="337290147"/>
-						<reference key="destination" ref="347912266"/>
-					</object>
-					<int key="connectionID">923</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">name</string>
-						<reference key="source" ref="337290147"/>
-						<reference key="destination" ref="689083195"/>
-					</object>
-					<int key="connectionID">924</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">ingredients</string>
-						<reference key="source" ref="337290147"/>
-						<reference key="destination" ref="1052363921"/>
-					</object>
-					<int key="connectionID">925</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">image</string>
-						<reference key="source" ref="337290147"/>
-						<reference key="destination" ref="232195798"/>
-					</object>
-					<int key="connectionID">926</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">category</string>
-						<reference key="source" ref="337290147"/>
-						<reference key="destination" ref="191304445"/>
-					</object>
-					<int key="connectionID">927</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">recipeList</string>
-						<reference key="source" ref="337290147"/>
-						<reference key="destination" ref="798398872"/>
-					</object>
-					<int key="connectionID">928</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">picture</string>
-						<reference key="source" ref="337290147"/>
-						<reference key="destination" ref="232195798"/>
-					</object>
-					<int key="connectionID">929</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">addRecipe:</string>
-						<reference key="source" ref="337290147"/>
-						<reference key="destination" ref="540158511"/>
-					</object>
-					<int key="connectionID">930</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">window</string>
 						<reference key="source" ref="180857069"/>
 						<reference key="destination" ref="972006081"/>
 					</object>
@@ -4843,6 +4760,70 @@
 						<reference key="destination" ref="656422220"/>
 					</object>
 					<int key="connectionID">944</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">category</string>
+						<reference key="source" ref="180857069"/>
+						<reference key="destination" ref="191304445"/>
+					</object>
+					<int key="connectionID">945</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">ingredients</string>
+						<reference key="source" ref="180857069"/>
+						<reference key="destination" ref="1052363921"/>
+					</object>
+					<int key="connectionID">946</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">name</string>
+						<reference key="source" ref="180857069"/>
+						<reference key="destination" ref="689083195"/>
+					</object>
+					<int key="connectionID">947</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">picture</string>
+						<reference key="source" ref="180857069"/>
+						<reference key="destination" ref="232195798"/>
+					</object>
+					<int key="connectionID">948</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">recipe</string>
+						<reference key="source" ref="180857069"/>
+						<reference key="destination" ref="347912266"/>
+					</object>
+					<int key="connectionID">949</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">summary</string>
+						<reference key="source" ref="180857069"/>
+						<reference key="destination" ref="993754652"/>
+					</object>
+					<int key="connectionID">950</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">recipeList</string>
+						<reference key="source" ref="180857069"/>
+						<reference key="destination" ref="798398872"/>
+					</object>
+					<int key="connectionID">951</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">addRecipe:</string>
+						<reference key="source" ref="180857069"/>
+						<reference key="destination" ref="540158511"/>
+					</object>
+					<int key="connectionID">952</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -6913,11 +6894,6 @@
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">920</int>
-						<reference key="object" ref="337290147"/>
-						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">935</int>
 						<reference key="object" ref="180857069"/>
 						<reference key="parent" ref="0"/>
@@ -7276,14 +7252,13 @@
 				<string key="911.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="917.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="92.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="920.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="935.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">944</int>
+			<int key="maxID">952</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -7291,10 +7266,15 @@
 					<string key="className">CIAddSheetController</string>
 					<string key="superclassName">NSWindowController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="addRecipe:">id</string>
 						<string key="close:">id</string>
 						<string key="open:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="addRecipe:">
+							<string key="name">addRecipe:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="close:">
 							<string key="name">close:</string>
 							<string key="candidateClassName">id</string>
@@ -7305,45 +7285,13 @@
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="sheet">NSWindow</string>
-						<string key="window">NSWindow</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="sheet">
-							<string key="name">sheet</string>
-							<string key="candidateClassName">NSWindow</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="window">
-							<string key="name">window</string>
-							<string key="candidateClassName">NSWindow</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CIAddSheetController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">CIAddWindowController</string>
-					<string key="superclassName">NSWindowController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">addRecipe:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">addRecipe:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">addRecipe:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="category">NSComboBox</string>
 						<string key="ingredients">NSTableView</string>
 						<string key="name">NSTextField</string>
 						<string key="picture">NSImageView</string>
 						<string key="recipe">NSTextField</string>
 						<string key="recipeList">NSTableView</string>
+						<string key="sheet">NSWindow</string>
 						<string key="summary">NSTextField</string>
 						<string key="window">NSWindow</string>
 					</dictionary>
@@ -7372,6 +7320,10 @@
 							<string key="name">recipeList</string>
 							<string key="candidateClassName">NSTableView</string>
 						</object>
+						<object class="IBToOneOutletInfo" key="sheet">
+							<string key="name">sheet</string>
+							<string key="candidateClassName">NSWindow</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="summary">
 							<string key="name">summary</string>
 							<string key="candidateClassName">NSTextField</string>
@@ -7383,7 +7335,7 @@
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CIAddWindowController.h</string>
+						<string key="minorKey">./Classes/CIAddSheetController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
