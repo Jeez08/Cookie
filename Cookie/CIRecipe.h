@@ -19,4 +19,9 @@
 @property (nonatomic, retain) NSArray *Ingredients;
 @property (nonatomic, retain) NSData *Recipe;
 
+- (id) initWithName:(NSString*)name category:(NSString*)category summary:(NSString*)summary picture:(NSImage*)picture rating:(NSNumber*)rating ingredients:(NSArray*)ingredients recipe:(NSData*)recipe;
++ (id) recipeWithName:(NSString*)name category:(NSString*)category summary:(NSString*)summary picture:(NSImage*)picture rating:(NSNumber*)rating ingredients:(NSArray*)ingredients recipe:(NSData*)recipe;
+
+- (void)dealloc;
+
 @end
