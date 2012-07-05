@@ -25,8 +25,8 @@
     [super dealloc];
 }
 
-- (void) addRecipeWithName:(NSString *)name category:(NSString *)category summary:(NSString *)summary picture:(NSImage *)picture rating:(NSNumber *)rating ingredients:(NSTableView *)ingredients recipe:(NSTextField*)recipe {
-    CIRecipe *r = [CIRecipe recipeWithName:name category:category summary:summary picture:picture rating:rating ingredients:ingredients recipe:recipe];
+- (void) addRecipeWithName:(NSString *)name category:(NSString *)category summary:(NSString *)summary picture:(NSImage *)picture rating:(NSNumber *)rating ingredients:(NSMutableArray *)ingredients recipe:(NSTextField*)recipe {
+    CIRecipe *r = [[CIRecipe recipeWithName:name category:category summary:summary picture:picture rating:rating ingredients:ingredients recipe:recipe] retain];
     [_recipeList addObject:r];
     [[NSNotificationCenter defaultCenter] postNotificationName:RECIPECHANGE object:self];
 }
@@ -40,26 +40,9 @@
     return [_recipeList count];
 }
 
-/*
-// 10.6
-- (NSCell *)tableView:(NSTableView *)tableView dataCellForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-    CIRecipe *r = [_recipeList objectAtIndex:row];
-    //CIRecipeCell *rc = [tableView preparedCellAtColumn:0 row:row];
-    
-    CIRecipeCell *rc = [[[CIRecipeCell alloc] init] autorelease];
-    
-    [rc.Rating setFloatValue:r.Rating.floatValue];
-    
-    return rc;
-}
-*/
 
-
-// 10.7
 - (NSTableCellView*) tableView:(NSTableView*)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     CIRecipe *r = [_recipeList objectAtIndex:row];
-    
-    //CIRecipeCell *rc = [[[CIRecipeCell alloc] init] autorelease];
     CIRecipeCell *rc = [tableView makeViewWithIdentifier:tableColumn.identifier owner:nil];
     
     [rc.Rating setFloatValue:r.Rating.floatValue];

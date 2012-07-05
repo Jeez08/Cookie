@@ -15,7 +15,7 @@
 
 @property (nonatomic, retain) NSMutableArray *recipeList;
 
-- (void) addRecipeWithName:(NSString*)name category:(NSString*)category summary:(NSString*)summary picture:(NSImage*)picture rating:(NSNumber*)rating ingredients:(NSTableView*)ingredients recipe:(NSTextField*)recipe;
+- (void) addRecipeWithName:(NSString*)name category:(NSString*)category summary:(NSString*)summary picture:(NSImage*)picture rating:(NSNumber*)rating ingredients:(NSMutableArray*)ingredients recipe:(NSTextField*)recipe;
 - (void) deleteRecipeAtIndex:(NSInteger)row;
 
 - (void) dealloc;

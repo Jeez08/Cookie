@@ -10,9 +10,9 @@
 
 @interface CIIngredient : NSObject
 
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSString *quantity;
-@property (nonatomic, retain) NSString *unit;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *quantity;
+@property (nonatomic, copy) NSString *unit;
 
 - (id) initWithName:(NSString*)name quantity:(NSString*)quantity unit:(NSString*)unit;
 + (id) ingredientWithName:(NSString*)name quantity:(NSString*)quantity unit:(NSString*)unit;

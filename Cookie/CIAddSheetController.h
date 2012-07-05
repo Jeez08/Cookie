@@ -44,7 +44,6 @@
 
 -(IBAction)open:(id)sender;
 -(IBAction)close:(id)sender;
--(IBAction)cancel:(id)sender;
 
 -(IBAction)openModif:(id)sender;
 -(IBAction)closeModif:(id)sender;

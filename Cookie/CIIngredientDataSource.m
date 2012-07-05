@@ -29,9 +29,7 @@
 }
 
 -(void)addIngredientWithName:(NSString*)name quantity:(NSString*)quantity mesure:(NSString*)mesure {
-    
-    CIIngredient *i = [CIIngredient ingredientWithName:name quantity:quantity unit:mesure];
-    
+    CIIngredient *i = [[CIIngredient ingredientWithName:name quantity:quantity unit:mesure] retain];
     [_ingredientsList addObject:i];
     [[NSNotificationCenter defaultCenter] postNotificationName:INGRECHANGE object:self];
 }
@@ -45,11 +43,16 @@
     [_ingredientsList removeAllObjects];
 }
 
-- (NSInteger) numberOfRowsInTableView:(NSTableView*) tableView {
+- (NSInteger)numberOfRowsInTableView:(NSTableView*) tableView {
     return [_ingredientsList count];
 }
 
-// 10.7
+-(NSMutableArray*)getCurrentIngredients {
+    NSMutableArray *newArray = [[[NSMutableArray alloc] initWithArray:_ingredientsList] autorelease];
+    
+    return newArray;
+}
+
 - (NSTableCellView*) tableView:(NSTableView*)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     
     NSTableCellView *cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:nil];

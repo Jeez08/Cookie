@@ -40,6 +40,7 @@
 }
 
 -(IBAction)open:(id)sender {
+    [self.ingredients reloadData];
     [NSApp beginSheet:sheet modalForWindow:window modalDelegate:self didEndSelector:NULL contextInfo:nil];
 }
 
@@ -54,27 +55,24 @@
     [self.recipeLabel setTextColor:[NSColor controlTextColor]];
     [self.ingredientsLabel setTextColor:[NSColor controlTextColor]];
     
-    /*self.name.stringValue = nil;
-    self.summary.stringValue = nil;
-    self.category.stringValue = nil;
-    self.recipe.stringValue = nil;
-    self.picture.image = nil;*/
+    self.name.stringValue = @"";
+    self.summary.stringValue = @"";
+    self.category.stringValue = @"";
+    self.recipe.stringValue = @"";
+    self.picture.image = nil;
+    self.nameIngre.stringValue = @"";
+    self.quantityIngre.stringValue = @"";
+    self.mesureIngre.stringValue = @"";
     
+    CIIngredientDataSource *dataSource = ingredients.dataSource;
+    [dataSource deleteAllIngredients];
     [sheet orderOut:nil];
     [NSApp endSheet:sheet];
 }
+
 -(IBAction)closeModif:(id)sender {
     [sheetModif orderOut:nil];
     [NSApp endSheet:sheetModif];
-}
-
--(IBAction)cancel:(id)sender {
-    
-    CIIngredientDataSource *dataSource = ingredients.dataSource;
-    
-    [dataSource deleteAllIngredients];
-    [self.ingredients reloadData];
-    [self close:sender];
 }
 
 - (IBAction)addRecipe:(id)sender {
@@ -85,7 +83,8 @@
     [self.recipeLabel setTextColor:[NSColor controlTextColor]];
     [self.ingredientsLabel setTextColor:[NSColor controlTextColor]];
     
-    CIRecipeDataSource *dataSource = recipeList.dataSource;
+    CIRecipeDataSource *dataSourceRecipe = recipeList.dataSource;
+    CIIngredientDataSource *dataSourceIngredient = ingredients.dataSource;
     
     if (name.stringValue == (id)[NSNull null] || name.stringValue.length == 0) {
         error = YES;
@@ -115,7 +114,7 @@
     if (error)
         return;
     
-    [dataSource addRecipeWithName:name.stringValue category:category.stringValue summary:summary.stringValue picture:picture.image rating:[NSNumber numberWithInt:1] ingredients:ingredients recipe:recipe];
+    [dataSourceRecipe addRecipeWithName:name.stringValue category:category.stringValue summary:summary.stringValue picture:picture.image rating:[NSNumber numberWithInt:1] ingredients:[dataSourceIngredient ingredientsList] recipe:recipe];
     
     [self close:sender];
 }

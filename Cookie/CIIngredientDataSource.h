@@ -17,8 +17,9 @@
 @property (assign) IBOutlet NSTableColumn *quantityColumn;
 @property (assign) IBOutlet NSTableColumn *mesureColumn;
 
-- (void) addIngredientWithName:(NSString*)name quantity:(NSString*)quantity mesure:(NSString*)mesure;
-- (void) deleteIngredientAtIndex:(NSInteger)row;
+-(void)addIngredientWithName:(NSString*)name quantity:(NSString*)quantity mesure:(NSString*)mesure;
+-(void)deleteIngredientAtIndex:(NSInteger)row;
+-(NSMutableArray*)getCurrentIngredients;
 -(void)deleteAllIngredients;
 
 - (void) dealloc;
