@@ -24,6 +24,7 @@
 		85C83F4C15A3BD450037E342 /* CIRecipeDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C83F4B15A3BD450037E342 /* CIRecipeDataSource.m */; };
 		85C83F5015A3BEE40037E342 /* CIRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C83F4F15A3BEE40037E342 /* CIRecipe.m */; };
 		85C83F5315A3BF7D0037E342 /* CIIngredient.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C83F5215A3BF7D0037E342 /* CIIngredient.m */; };
+		E99204B415A5BB8F00BCBD66 /* CIIngredientDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E99204B315A5BB8F00BCBD66 /* CIIngredientDataSource.m */; };
 		E9AD807715A4BA0F009B77CE /* CIAddSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9AD807615A4BA0F009B77CE /* CIAddSheetController.m */; };
 		E9F046DE15A4984F003F2456 /* CIRecipeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F046DD15A4984F003F2456 /* CIRecipeCell.m */; };
 		F14E9E6415A3A32500216FA6 /* CIWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F14E9E6315A3A32500216FA6 /* CIWindowController.m */; };
@@ -69,6 +70,9 @@
 		85C83F4F15A3BEE40037E342 /* CIRecipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIRecipe.m; sourceTree = "<group>"; };
 		85C83F5115A3BF7D0037E342 /* CIIngredient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIIngredient.h; sourceTree = "<group>"; };
 		85C83F5215A3BF7D0037E342 /* CIIngredient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIIngredient.m; sourceTree = "<group>"; };
+		E98D82A915A4E24200ADE5C1 /* defineChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = defineChange.h; sourceTree = "<group>"; };
+		E99204B215A5BB8F00BCBD66 /* CIIngredientDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIIngredientDataSource.h; sourceTree = "<group>"; };
+		E99204B315A5BB8F00BCBD66 /* CIIngredientDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIIngredientDataSource.m; sourceTree = "<group>"; };
 		E9AD807515A4BA0F009B77CE /* CIAddSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAddSheetController.h; sourceTree = "<group>"; };
 		E9AD807615A4BA0F009B77CE /* CIAddSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAddSheetController.m; sourceTree = "<group>"; };
 		E9F046DC15A4984F003F2456 /* CIRecipeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIRecipeCell.h; sourceTree = "<group>"; };
@@ -154,10 +158,13 @@
 				85C83EF515A38C600037E342 /* Supporting Files */,
 				85C83F4A15A3BD450037E342 /* CIRecipeDataSource.h */,
 				85C83F4B15A3BD450037E342 /* CIRecipeDataSource.m */,
+				E99204B215A5BB8F00BCBD66 /* CIIngredientDataSource.h */,
+				E99204B315A5BB8F00BCBD66 /* CIIngredientDataSource.m */,
 				85C83F4E15A3BEE40037E342 /* CIRecipe.h */,
 				85C83F4F15A3BEE40037E342 /* CIRecipe.m */,
 				85C83F5115A3BF7D0037E342 /* CIIngredient.h */,
 				85C83F5215A3BF7D0037E342 /* CIIngredient.m */,
+				E98D82A915A4E24200ADE5C1 /* defineChange.h */,
 				E9AD807515A4BA0F009B77CE /* CIAddSheetController.h */,
 				E9AD807615A4BA0F009B77CE /* CIAddSheetController.m */,
 			);
@@ -316,6 +323,7 @@
 				85C83F5315A3BF7D0037E342 /* CIIngredient.m in Sources */,
 				E9F046DE15A4984F003F2456 /* CIRecipeCell.m in Sources */,
 				E9AD807715A4BA0F009B77CE /* CIAddSheetController.m in Sources */,
+				E99204B415A5BB8F00BCBD66 /* CIIngredientDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,7 +403,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -414,7 +422,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -424,9 +432,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cookie/Cookie-Prefix.pch";
 				INFOPLIST_FILE = "Cookie/Cookie-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -437,9 +445,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cookie/Cookie-Prefix.pch";
 				INFOPLIST_FILE = "Cookie/Cookie-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

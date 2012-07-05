@@ -11,7 +11,12 @@
 @interface CIIngredient : NSObject
 
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSNumber *quantity;
+@property (nonatomic, retain) NSString *quantity;
 @property (nonatomic, retain) NSString *unit;
+
+- (id) initWithName:(NSString*)name quantity:(NSString*)quantity unit:(NSString*)unit;
++ (id) ingredientWithName:(NSString*)name quantity:(NSString*)quantity unit:(NSString*)unit;
+
+- (void)dealloc;
 
 @end

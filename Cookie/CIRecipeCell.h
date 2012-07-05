@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CIRecipeCell : NSTableView
+@interface CIRecipeCell : NSTableCellView
 
-@property (nonatomic, retain) IBOutlet NSNumber * rating;
+@property (nonatomic, retain) IBOutlet NSLevelIndicator *Rating;
 
 @end

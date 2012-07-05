@@ -8,10 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 #import "CIRecipe.h"
+#import "CIRecipeCell.h"
+#import "defineChange.h"
 
 @interface CIRecipeDataSource : NSObject<NSTableViewDataSource, NSTableViewDelegate>
-
-#define MODIDCHANGE @"RecipeChange"
 
 @property (nonatomic, retain) NSMutableArray *recipeList;
 

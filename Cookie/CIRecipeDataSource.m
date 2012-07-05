@@ -28,12 +28,12 @@
 - (void) addRecipeWithName:(NSString *)name category:(NSString *)category summary:(NSString *)summary picture:(NSImage *)picture rating:(NSNumber *)rating ingredients:(NSTableView *)ingredients recipe:(NSTextField*)recipe {
     CIRecipe *r = [CIRecipe recipeWithName:name category:category summary:summary picture:picture rating:rating ingredients:ingredients recipe:recipe];
     [_recipeList addObject:r];
-    [[NSNotificationCenter defaultCenter] postNotificationName:MODIDCHANGE object:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:RECIPECHANGE object:self];
 }
 
 - (void) deleteRecipeAtIndex:(NSInteger)row {
     [_recipeList removeObjectAtIndex:row];
-    [[NSNotificationCenter defaultCenter] postNotificationName:MODIDCHANGE object:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:RECIPECHANGE object:self];
 }
 
 - (NSInteger) numberOfRowsInTableView:(NSTableView*) tableView {
@@ -41,17 +41,32 @@
 }
 
 /*
-- (NSTableCellView*) tableView:(NSTableView*)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-    Movie *m = [self.items objectAtIndex:row];
+// 10.6
+- (NSCell *)tableView:(NSTableView *)tableView dataCellForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+    CIRecipe *r = [_recipeList objectAtIndex:row];
+    //CIRecipeCell *rc = [tableView preparedCellAtColumn:0 row:row];
     
-    MovieCell *mc = [tableView makeViewWithIdentifier:tableColumn.identifier owner:nil];
+    CIRecipeCell *rc = [[[CIRecipeCell alloc] init] autorelease];
     
-    mc.textField.stringValue = m.title;
-    mc.detailsField.stringValue = m.director;
-    mc.imageView.image = [NSImage imageNamed:@"steve"];
+    [rc.Rating setFloatValue:r.Rating.floatValue];
     
-    return mc;
+    return rc;
 }
- */
+*/
+
+
+// 10.7
+- (NSTableCellView*) tableView:(NSTableView*)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+    CIRecipe *r = [_recipeList objectAtIndex:row];
+    
+    //CIRecipeCell *rc = [[[CIRecipeCell alloc] init] autorelease];
+    CIRecipeCell *rc = [tableView makeViewWithIdentifier:tableColumn.identifier owner:nil];
+    
+    [rc.Rating setFloatValue:r.Rating.floatValue];
+    rc.textField.stringValue = r.Name;
+    rc.imageView.image = r.Picture;
+    
+    return rc;
+}
 
 @end

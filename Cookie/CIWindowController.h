@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "defineChange.h"
 
 @interface CIWindowController : NSWindowController
 
