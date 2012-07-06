@@ -24,7 +24,7 @@
 @property (assign) IBOutlet NSTextField *recipe;
 @property (assign) IBOutlet NSTextField *nameIngre;
 @property (assign) IBOutlet NSTextField *quantityIngre;
-@property (assign) IBOutlet NSTextField *mesureIngre;
+@property (assign) IBOutlet NSComboBox *mesureIngre;
 
 @property (assign) IBOutlet NSTextFieldCell *nameLabel;
 @property (assign) IBOutlet NSTextFieldCell *summaryLabel;
@@ -34,6 +34,8 @@
 @property (assign) IBOutlet NSTextFieldCell *nameIngreLabel;
 @property (assign) IBOutlet NSTextFieldCell *quantityIngreLabel;
 @property (assign) IBOutlet NSTextFieldCell *mesureIngreLabel;
+
+@property (assign) BOOL isModif;
 
 // Main Window
 @property (assign) IBOutlet NSWindow *window;

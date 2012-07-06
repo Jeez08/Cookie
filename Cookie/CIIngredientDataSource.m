@@ -47,12 +47,6 @@
     return [_ingredientsList count];
 }
 
--(NSMutableArray*)getCurrentIngredients {
-    NSMutableArray *newArray = [[[NSMutableArray alloc] initWithArray:_ingredientsList] autorelease];
-    
-    return newArray;
-}
-
 - (NSTableCellView*) tableView:(NSTableView*)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     
     NSTableCellView *cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:nil];

@@ -33,6 +33,8 @@
 @synthesize quantityIngreLabel;
 @synthesize mesureIngreLabel;
 
+@synthesize isModif;
+
 - (void) awakeFromNib {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshRecipeList:) name:RECIPECHANGE object:nil];
     
@@ -41,11 +43,13 @@
 
 -(IBAction)open:(id)sender {
     [self.ingredients reloadData];
+    isModif = NO;
     [NSApp beginSheet:sheet modalForWindow:window modalDelegate:self didEndSelector:NULL contextInfo:nil];
 }
 
 -(IBAction)openModif:(id)sender {
-    [NSApp beginSheet:sheetModif modalForWindow:window modalDelegate:self didEndSelector:NULL contextInfo:nil];
+    isModif = YES;
+    [NSApp beginSheet:sheet modalForWindow:window modalDelegate:self didEndSelector:NULL contextInfo:nil];
 }
 
 -(IBAction)close:(id)sender {
@@ -54,6 +58,9 @@
     [self.categoryLabel setTextColor:[NSColor controlTextColor]];
     [self.recipeLabel setTextColor:[NSColor controlTextColor]];
     [self.ingredientsLabel setTextColor:[NSColor controlTextColor]];
+    [self.nameIngreLabel setTextColor:[NSColor controlTextColor]];
+    [self.quantityIngreLabel setTextColor:[NSColor controlTextColor]];
+    [self.mesureIngreLabel setTextColor:[NSColor controlTextColor]];
     
     self.name.stringValue = @"";
     self.summary.stringValue = @"";
@@ -82,6 +89,9 @@
     [self.categoryLabel setTextColor:[NSColor controlTextColor]];
     [self.recipeLabel setTextColor:[NSColor controlTextColor]];
     [self.ingredientsLabel setTextColor:[NSColor controlTextColor]];
+    
+    if (isModif)
+        return;
     
     CIRecipeDataSource *dataSourceRecipe = recipeList.dataSource;
     CIIngredientDataSource *dataSourceIngredient = ingredients.dataSource;
@@ -149,6 +159,8 @@
 }
 
 - (void) refreshRecipeList:(NSNotification*)n {
+    CIRecipeDataSource *dataSource = [self.recipeList dataSource];
+    [dataSource loadRecipe];
     [self.recipeList reloadData];
 }
 

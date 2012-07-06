@@ -17,6 +17,9 @@
 
 - (void) addRecipeWithName:(NSString*)name category:(NSString*)category summary:(NSString*)summary picture:(NSImage*)picture rating:(NSNumber*)rating ingredients:(NSMutableArray*)ingredients recipe:(NSTextField*)recipe;
 - (void) deleteRecipeAtIndex:(NSInteger)row;
+-(void)loadRecipe;
+-(BOOL)saveRecipe:(CIRecipe*)recipe;
+-(id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row;
 
 - (void) dealloc;
 

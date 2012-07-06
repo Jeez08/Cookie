@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CIRecipe : NSObject
+@interface CIRecipe : NSObject<NSCoding>
 
 @property (nonatomic, copy) NSString *UniqueId;
 @property (nonatomic, copy) NSString *Name;
@@ -19,8 +19,12 @@
 @property (nonatomic, copy) NSMutableArray *Ingredients;
 @property (nonatomic, copy) NSTextField *Recipe;
 
-- (id) initWithName:(NSString*)name category:(NSString*)category summary:(NSString*)summary picture:(NSImage*)picture rating:(NSNumber*)rating ingredients:(NSMutableArray*)ingredients recipe:(NSTextField*)recipe;
-+ (id) recipeWithName:(NSString*)name category:(NSString*)category summary:(NSString*)summary picture:(NSImage*)picture rating:(NSNumber*)rating ingredients:(NSMutableArray*)ingredients recipe:(NSTextField*)recipe;
+-(id)initWithName:(NSString*)name category:(NSString*)category summary:(NSString*)summary picture:(NSImage*)picture rating:(NSNumber*)rating ingredients:(NSMutableArray*)ingredients recipe:(NSTextField*)recipe;
++(id)recipeWithName:(NSString*)name category:(NSString*)category summary:(NSString*)summary picture:(NSImage*)picture rating:(NSNumber*)rating ingredients:(NSMutableArray*)ingredients recipe:(NSTextField*)recipe;
+//+(NSDictionary*)convertRecipe:(CIRecipe*)recipe;
+
+-(id)initWithCoder:(NSCoder *)aDecoder;
+-(void)encodeWithCoder:(NSCoder *)aCoder;
 
 - (void)dealloc;
 

@@ -8,6 +8,8 @@
 
 #import "CIRecipe.h"
 
+static int uniqueIDGen = 1000;
+
 @implementation CIRecipe
 
 @synthesize Name = _Name;
@@ -25,7 +27,7 @@
     
     if (nil != self) {
         _Name = name;
-        _UniqueId = 0;
+        _UniqueId = [NSString stringWithFormat:@"%d", uniqueIDGen++];
         _Category = category;
         _Summary = summary;
         _Picture = [picture copy];
@@ -41,6 +43,50 @@
     
     return [[[self alloc] initWithName:name category:category summary:summary picture:picture rating:rating ingredients:ingredients recipe:recipe] autorelease];
 }
+
+-(id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super init];
+    
+    if (nil != self){
+        _Name = [[aDecoder decodeObjectForKey:@"Name"] retain];
+        _UniqueId = [[aDecoder decodeObjectForKey:@"UniqueID"] retain];
+        _Category = [[aDecoder decodeObjectForKey:@"Category"] retain];
+        _Summary = [[aDecoder decodeObjectForKey:@"Summary"] retain];
+        _Picture = [[aDecoder decodeObjectForKey:@"Picture"] retain];
+        _Rating = [[aDecoder decodeObjectForKey:@"Rating"] retain];
+        _Ingredients = [[aDecoder decodeObjectForKey:@"Ingredients"] retain];
+        _Recipe = [[aDecoder decodeObjectForKey:@"Recipe"] retain];
+    }
+    
+    return self;
+}
+
+-(void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:_Name forKey:@"Name"];
+    [aCoder encodeObject:_UniqueId forKey:@"UniqueID"];
+    [aCoder encodeObject:_Category forKey:@"Category"];
+    [aCoder encodeObject:_Summary forKey:@"Summary"];
+    [aCoder encodeObject:_Picture forKey:@"Picture"];
+    [aCoder encodeObject:_Rating forKey:@"Rating"];
+    [aCoder encodeObject:_Ingredients forKey:@"Ingredients"];
+    [aCoder encodeObject:_Recipe forKey:@"Recipe"];
+}
+
+/*
++(NSDictionary*)convertRecipe:(CIRecipe *)recipe {
+    NSDictionary *dico = [[[NSDictionary alloc] initWithObjectsAndKeys:
+                          @"UniqueID", [recipe UniqueId],
+                          @"Name", [recipe Name],
+                          @"Category", [recipe Category],       // FIXME -> NSNumber
+                          @"PictureID", [recipe Picture],       // FIXME -> NSString
+                          @"Rating", [recipe Rating],
+                          @"Summary", [recipe Summary],         // FIXME -> NSData
+                          @"Ingredients", [recipe Ingredients], // FIXME -> NSArray
+                           nil] autorelease];
+    
+    return dico;
+}
+*/
 
 - (void) dealloc {
     _Name = nil;

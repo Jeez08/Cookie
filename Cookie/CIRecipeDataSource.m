@@ -16,8 +16,37 @@
     self = [super init];
     if (self) {
         self.recipeList = [NSMutableArray array];
+        [self loadRecipe];
     }
     return self;
+}
+
+-(void)loadRecipe {
+    NSString *directoryPath = @"Cookie";
+    
+    [_recipeList removeAllObjects];
+    NSArray *files = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:directoryPath error:nil];
+    for (NSString *path in files) {
+        if ([path hasSuffix:@".meal"]) {
+            CIRecipe *r = [[NSKeyedUnarchiver unarchiveObjectWithFile:[directoryPath stringByAppendingPathComponent:path]] retain];
+            [_recipeList addObject:r];
+        }
+    }
+}
+
+-(BOOL)saveRecipe:(CIRecipe *)recipe {
+    NSString *directoryPath = @"Cookie";
+    
+    [recipe retain];
+    NSLog(@"%@", [[directoryPath stringByAppendingPathComponent:[recipe Name]] stringByAppendingPathExtension:@"meal"]);
+    
+    NSString *outputName = [[recipe Name] stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+    
+    BOOL result = [NSKeyedArchiver archiveRootObject:recipe toFile:[[directoryPath stringByAppendingPathComponent:outputName] stringByAppendingPathExtension:@"meal"]];
+    
+    [recipe release];
+    
+    return result;
 }
 
 - (void) dealloc {
@@ -27,7 +56,16 @@
 
 - (void) addRecipeWithName:(NSString *)name category:(NSString *)category summary:(NSString *)summary picture:(NSImage *)picture rating:(NSNumber *)rating ingredients:(NSMutableArray *)ingredients recipe:(NSTextField*)recipe {
     CIRecipe *r = [[CIRecipe recipeWithName:name category:category summary:summary picture:picture rating:rating ingredients:ingredients recipe:recipe] retain];
-    [_recipeList addObject:r];
+    
+    if (![self saveRecipe:r]) {
+        [r release];
+        NSLog(@"%@", @"Save FAIL");
+        return;
+    }
+    
+    [r release];
+    //[_recipeList addObject:r];
+         
     [[NSNotificationCenter defaultCenter] postNotificationName:RECIPECHANGE object:self];
 }
 
@@ -40,6 +78,9 @@
     return [_recipeList count];
 }
 
+-(id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+    return [_recipeList objectAtIndex:row];
+}
 
 - (NSTableCellView*) tableView:(NSTableView*)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     CIRecipe *r = [_recipeList objectAtIndex:row];

@@ -8,14 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CIIngredient : NSObject
+@interface CIIngredient : NSObject<NSCoding>  
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *quantity;
 @property (nonatomic, copy) NSString *unit;
 
-- (id) initWithName:(NSString*)name quantity:(NSString*)quantity unit:(NSString*)unit;
-+ (id) ingredientWithName:(NSString*)name quantity:(NSString*)quantity unit:(NSString*)unit;
+-(id)initWithName:(NSString*)name quantity:(NSString*)quantity unit:(NSString*)unit;
++(id)ingredientWithName:(NSString*)name quantity:(NSString*)quantity unit:(NSString*)unit;
++(NSDictionary*)convertIngredient:(CIIngredient*)ingredient;
+
+-(id)initWithCoder:(NSCoder *)aDecoder;
+-(void)encodeWithCoder:(NSCoder *)aCoder;
 
 - (void)dealloc;
 
