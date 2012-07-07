@@ -24,6 +24,7 @@
 		85C83F4C15A3BD450037E342 /* CIRecipeDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C83F4B15A3BD450037E342 /* CIRecipeDataSource.m */; };
 		85C83F5015A3BEE40037E342 /* CIRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C83F4F15A3BEE40037E342 /* CIRecipe.m */; };
 		85C83F5315A3BF7D0037E342 /* CIIngredient.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C83F5215A3BF7D0037E342 /* CIIngredient.m */; };
+		E97033CD15A7362D00B6622A /* CIImportController.m in Sources */ = {isa = PBXBuildFile; fileRef = E97033CC15A7362D00B6622A /* CIImportController.m */; };
 		E99204B415A5BB8F00BCBD66 /* CIIngredientDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E99204B315A5BB8F00BCBD66 /* CIIngredientDataSource.m */; };
 		E9AD807715A4BA0F009B77CE /* CIAddSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9AD807615A4BA0F009B77CE /* CIAddSheetController.m */; };
 		E9F046DE15A4984F003F2456 /* CIRecipeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F046DD15A4984F003F2456 /* CIRecipeCell.m */; };
@@ -70,6 +71,8 @@
 		85C83F4F15A3BEE40037E342 /* CIRecipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIRecipe.m; sourceTree = "<group>"; };
 		85C83F5115A3BF7D0037E342 /* CIIngredient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIIngredient.h; sourceTree = "<group>"; };
 		85C83F5215A3BF7D0037E342 /* CIIngredient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIIngredient.m; sourceTree = "<group>"; };
+		E97033CB15A7362D00B6622A /* CIImportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIImportController.h; sourceTree = "<group>"; };
+		E97033CC15A7362D00B6622A /* CIImportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIImportController.m; sourceTree = "<group>"; };
 		E98D82A915A4E24200ADE5C1 /* defineChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = defineChange.h; sourceTree = "<group>"; };
 		E99204B215A5BB8F00BCBD66 /* CIIngredientDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIIngredientDataSource.h; sourceTree = "<group>"; };
 		E99204B315A5BB8F00BCBD66 /* CIIngredientDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIIngredientDataSource.m; sourceTree = "<group>"; };
@@ -167,6 +170,8 @@
 				E98D82A915A4E24200ADE5C1 /* defineChange.h */,
 				E9AD807515A4BA0F009B77CE /* CIAddSheetController.h */,
 				E9AD807615A4BA0F009B77CE /* CIAddSheetController.m */,
+				E97033CB15A7362D00B6622A /* CIImportController.h */,
+				E97033CC15A7362D00B6622A /* CIImportController.m */,
 			);
 			path = Cookie;
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 				E9F046DE15A4984F003F2456 /* CIRecipeCell.m in Sources */,
 				E9AD807715A4BA0F009B77CE /* CIAddSheetController.m in Sources */,
 				E99204B415A5BB8F00BCBD66 /* CIIngredientDataSource.m in Sources */,
+				E97033CD15A7362D00B6622A /* CIImportController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
