@@ -34,15 +34,25 @@
     }
 }
 
--(BOOL)saveRecipe:(CIRecipe *)recipe {
+-(BOOL)saveRecipeInDB:(CIRecipe *)recipe {
     NSString *directoryPath = @"Cookie";
     
     [recipe retain];
-    NSLog(@"%@", [[directoryPath stringByAppendingPathComponent:[recipe Name]] stringByAppendingPathExtension:@"meal"]);
-    
     NSString *outputName = [[recipe Name] stringByReplacingOccurrencesOfString:@" " withString:@"_"];
     
     BOOL result = [NSKeyedArchiver archiveRootObject:recipe toFile:[[directoryPath stringByAppendingPathComponent:outputName] stringByAppendingPathExtension:@"meal"]];
+    [recipe release];
+    
+    return result;
+}
+
+-(BOOL)deleteRecipeFromDB:(CIRecipe *)recipe {
+    NSString *directoryPath = @"Cookie";
+    
+    [recipe retain];
+    NSString *outputName = [[recipe Name] stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+    
+    BOOL result = [[NSFileManager defaultManager] removeItemAtPath:[[directoryPath stringByAppendingPathComponent:outputName] stringByAppendingPathExtension:@"meal"] error:nil];
     
     [recipe release];
     
@@ -54,23 +64,44 @@
     [super dealloc];
 }
 
-- (void) addRecipeWithName:(NSString *)name category:(NSString *)category summary:(NSString *)summary picture:(NSImage *)picture rating:(NSNumber *)rating ingredients:(NSMutableArray *)ingredients recipe:(NSTextField*)recipe {
-    CIRecipe *r = [[CIRecipe recipeWithName:name category:category summary:summary picture:picture rating:rating ingredients:ingredients recipe:recipe] retain];
+- (void) addRecipeWithName:(NSString *)name category:(NSString *)category summary:(NSString *)summary picture:(NSImage *)picture rating:(NSNumber *)rating ingredients:(NSMutableArray *)ingredients recipe:(NSString*)recipe preparation:(int)preparation baking:(int)baking rest:(int)rest numberOfPeople:(int)numberOfPeople {
+    CIRecipe *r = [[CIRecipe recipeWithName:name category:category summary:summary picture:picture rating:rating ingredients:ingredients recipe:recipe preparation:preparation baking:baking rest:rest numberOfPeople:numberOfPeople] retain];
     
-    if (![self saveRecipe:r]) {
+    if (![self saveRecipeInDB:r]) {
         [r release];
         NSLog(@"%@", @"Save FAIL");
         return;
     }
     
     [r release];
-    //[_recipeList addObject:r];
-         
+    
+    [self loadRecipe];
     [[NSNotificationCenter defaultCenter] postNotificationName:RECIPECHANGE object:self];
 }
 
-- (void) deleteRecipeAtIndex:(NSInteger)row {
-    [_recipeList removeObjectAtIndex:row];
+-(void)updateRecipe:(CIRecipe *)oldRecipe name:(NSString *)name category:(NSString *)category summary:(NSString *)summary picture:(NSImage *)picture rating:(NSNumber *)rating ingredients:(NSMutableArray *)ingredients recipe:(NSString*)recipe preparation:(int)preparation baking:(int)baking rest:(int)rest numberOfPeople:(int)numberOfPeople {
+    CIRecipe *r = [[CIRecipe recipeWithName:name category:category summary:summary picture:picture rating:rating ingredients:ingredients recipe:recipe preparation:preparation baking:baking rest:rest numberOfPeople:numberOfPeople] retain];
+    
+    [self deleteRecipeFromDB:oldRecipe];
+    
+    if (![self saveRecipeInDB:r]) {
+        [r release];
+        NSLog(@"%@", @"Save FAIL");
+        return;
+    }
+    
+    [r release];
+    
+    [self loadRecipe];
+    [[NSNotificationCenter defaultCenter] postNotificationName:RECIPECHANGE object:self];
+}
+
+-(void)deleteRecipe:(CIRecipe *)recipe {
+    
+    if (![self deleteRecipeFromDB:recipe])
+        return;
+    
+    [self loadRecipe];
     [[NSNotificationCenter defaultCenter] postNotificationName:RECIPECHANGE object:self];
 }
 
@@ -86,7 +117,7 @@
     CIRecipe *r = [_recipeList objectAtIndex:row];
     CIRecipeCell *rc = [tableView makeViewWithIdentifier:tableColumn.identifier owner:nil];
     
-    [rc.Rating setFloatValue:r.Rating.floatValue];
+    [rc.Rating setFloatValue:[[r Rating] floatValue]];
     rc.textField.stringValue = r.Name;
     rc.imageView.image = r.Picture;
     

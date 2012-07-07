@@ -69,7 +69,7 @@
         if (![[NSFileManager defaultManager] copyItemAtPath:[self fileToImport] toPath:newFileName error:nil])
             NSLog(@"Error while coping file in import");
     
-    CIRecipeDataSource *dataSource = [self.recipeList dataSource];
+    CIRecipeDataSource *dataSource = (CIRecipeDataSource*)[self.recipeList dataSource];
     [dataSource loadRecipe];
     [self.recipeList reloadData];
     

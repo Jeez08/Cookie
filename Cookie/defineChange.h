@@ -7,4 +7,5 @@
 //
 
 #define RECIPECHANGE @"RecipeChange"
+#define ADDINGRECHANGE @"AddIngredientChange"
 #define INGRECHANGE @"IngredientChange"

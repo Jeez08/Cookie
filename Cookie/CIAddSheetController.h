@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "defineChange.h"
 #import "CIRecipeDataSource.h"
-#import "CIIngredientDataSource.h"
+#import "CIAddIngredientDataSource.h"
 
 @interface CIAddSheetController : NSWindowController
 
@@ -21,10 +21,15 @@
 @property (assign) IBOutlet NSComboBox *category;
 @property (assign) IBOutlet NSImageView *picture;
 @property (assign) IBOutlet NSTableView *ingredients;
-@property (assign) IBOutlet NSTextField *recipe;
+@property (assign) IBOutlet NSTextView *recipe;
 @property (assign) IBOutlet NSTextField *nameIngre;
 @property (assign) IBOutlet NSTextField *quantityIngre;
 @property (assign) IBOutlet NSComboBox *mesureIngre;
+@property (assign) IBOutlet NSTextField *numberOfPeople;
+@property (assign) IBOutlet NSTextField *preparation;
+@property (assign) IBOutlet NSTextField *baking;
+@property (assign) IBOutlet NSTextField *rest;
+@property (assign) IBOutlet NSLevelIndicator *rating;
 
 @property (assign) IBOutlet NSTextFieldCell *nameLabel;
 @property (assign) IBOutlet NSTextFieldCell *summaryLabel;
@@ -33,7 +38,10 @@
 @property (assign) IBOutlet NSTextFieldCell *recipeLabel;
 @property (assign) IBOutlet NSTextFieldCell *nameIngreLabel;
 @property (assign) IBOutlet NSTextFieldCell *quantityIngreLabel;
-@property (assign) IBOutlet NSTextFieldCell *mesureIngreLabel;
+@property (assign) IBOutlet NSTextFieldCell *numberOfPeopleLabel;
+@property (assign) IBOutlet NSTextFieldCell *preparationLabel;
+@property (assign) IBOutlet NSTextFieldCell *bakingLabel;
+@property (assign) IBOutlet NSTextFieldCell *restLabel;
 
 @property (assign) BOOL isModif;
 
@@ -41,16 +49,18 @@
 @property (assign) IBOutlet NSWindow *window;
 // The Sheet
 @property (assign) IBOutlet NSWindow *sheet;
-// The Sheet Modif
-@property (assign) IBOutlet NSWindow *sheetModif;
 
--(IBAction)open:(id)sender;
+-(IBAction)openAdd:(id)sender;
 -(IBAction)close:(id)sender;
 
 -(IBAction)openModif:(id)sender;
--(IBAction)closeModif:(id)sender;
 
 -(IBAction)addRecipe:(id)sender;
 -(IBAction)addIngredient:(id)sender;
+
+-(IBAction)deleteRecipe:(id)sender;
+
+-(void)resetAllField;
+-(void)resetAllFieldColor;
 
 @end

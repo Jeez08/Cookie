@@ -15,10 +15,12 @@
 
 @property (nonatomic, retain) NSMutableArray *recipeList;
 
-- (void) addRecipeWithName:(NSString*)name category:(NSString*)category summary:(NSString*)summary picture:(NSImage*)picture rating:(NSNumber*)rating ingredients:(NSMutableArray*)ingredients recipe:(NSTextField*)recipe;
-- (void) deleteRecipeAtIndex:(NSInteger)row;
+- (void) addRecipeWithName:(NSString*)name category:(NSString*)category summary:(NSString*)summary picture:(NSImage*)picture rating:(NSNumber*)rating ingredients:(NSMutableArray*)ingredients recipe:(NSString*)recipe preparation:(int)preparation baking:(int)baking rest:(int)rest numberOfPeople:(int)numberOfPeople;
+- (void) updateRecipe:(CIRecipe*)oldRecipe name:(NSString*)name category:(NSString*)category summary:(NSString*)summary picture:(NSImage*)picture rating:(NSNumber*)rating ingredients:(NSMutableArray*)ingredients recipe:(NSString*)recipe preparation:(int)preparation baking:(int)baking rest:(int)rest numberOfPeople:(int)numberOfPeople;
+-(void)deleteRecipe:(CIRecipe*)recipe;
 -(void)loadRecipe;
--(BOOL)saveRecipe:(CIRecipe*)recipe;
+-(BOOL)saveRecipeInDB:(CIRecipe*)recipe;
+-(BOOL)deleteRecipeFromDB:(CIRecipe*)recipe;
 -(id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row;
 
 - (void) dealloc;

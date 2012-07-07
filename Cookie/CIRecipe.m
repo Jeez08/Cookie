@@ -20,8 +20,13 @@ static int uniqueIDGen = 1000;
 @synthesize Rating = _Rating;
 @synthesize Ingredients = _Ingredients;
 @synthesize Recipe = _Recipe;
+@synthesize Preparation = _Preparation;
+@synthesize Baking = _Baking;
+@synthesize Rest = _Rest;
+@synthesize NumberOfPeople = _NumberOfPeople;
 
-- (id) initWithName:(NSString *)name category:(NSString *)category summary:(NSString *)summary picture:(NSImage *)picture rating:(NSNumber *)rating ingredients:(NSMutableArray *)ingredients recipe:(NSTextField *)recipe {
+- (id) initWithName:(NSString *)name category:(NSString *)category summary:(NSString *)summary picture:(NSImage *)picture rating:(NSNumber *)rating ingredients:(NSMutableArray *)ingredients recipe:(NSString
+ *)recipe preparation:(int)preparation baking:(int)baking rest:(int)rest numberOfPeople:(int)numberOfPeople {
     
     self = [super init];
     
@@ -34,14 +39,18 @@ static int uniqueIDGen = 1000;
         _Rating = rating;
         _Ingredients = ingredients;
         _Recipe = recipe;
+        _Preparation = preparation;
+        _Baking = baking;
+        _Rest = rest;
+        _NumberOfPeople = numberOfPeople;
     }
     
     return self;
 }
 
-+ (id) recipeWithName:(NSString *)name category:(NSString *)category summary:(NSString *)summary picture:(NSImage *)picture rating:(NSNumber *)rating ingredients:(NSMutableArray *)ingredients recipe:(NSTextField *)recipe {
++ (id) recipeWithName:(NSString *)name category:(NSString *)category summary:(NSString *)summary picture:(NSImage *)picture rating:(NSNumber *)rating ingredients:(NSMutableArray *)ingredients recipe:(NSString *)recipe preparation:(int)preparation baking:(int)baking rest:(int)rest numberOfPeople:(int)numberOfPeople {
     
-    return [[[self alloc] initWithName:name category:category summary:summary picture:picture rating:rating ingredients:ingredients recipe:recipe] autorelease];
+    return [[[self alloc] initWithName:name category:category summary:summary picture:picture rating:rating ingredients:ingredients recipe:recipe preparation:preparation baking:baking rest:rest numberOfPeople:numberOfPeople] autorelease];
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder {
@@ -56,6 +65,10 @@ static int uniqueIDGen = 1000;
         _Rating = [[aDecoder decodeObjectForKey:@"Rating"] retain];
         _Ingredients = [[aDecoder decodeObjectForKey:@"Ingredients"] retain];
         _Recipe = [[aDecoder decodeObjectForKey:@"Recipe"] retain];
+        _Preparation = [aDecoder decodeIntForKey:@"Preparation"];
+        _Baking = [aDecoder decodeIntForKey:@"Baking"];
+        _Rest = [aDecoder decodeIntForKey:@"Rest"];
+        _NumberOfPeople = [aDecoder decodeIntForKey:@"NumberOfPeople"];
     }
     
     return self;
@@ -70,23 +83,11 @@ static int uniqueIDGen = 1000;
     [aCoder encodeObject:_Rating forKey:@"Rating"];
     [aCoder encodeObject:_Ingredients forKey:@"Ingredients"];
     [aCoder encodeObject:_Recipe forKey:@"Recipe"];
+    [aCoder encodeInt:_Preparation forKey:@"Preparation"];
+    [aCoder encodeInt:_Baking forKey:@"Baking"];
+    [aCoder encodeInt:_Rest forKey:@"Rest"];
+    [aCoder encodeInt:_NumberOfPeople forKey:@"NumberOfPeople"];
 }
-
-/*
-+(NSDictionary*)convertRecipe:(CIRecipe *)recipe {
-    NSDictionary *dico = [[[NSDictionary alloc] initWithObjectsAndKeys:
-                          @"UniqueID", [recipe UniqueId],
-                          @"Name", [recipe Name],
-                          @"Category", [recipe Category],       // FIXME -> NSNumber
-                          @"PictureID", [recipe Picture],       // FIXME -> NSString
-                          @"Rating", [recipe Rating],
-                          @"Summary", [recipe Summary],         // FIXME -> NSData
-                          @"Ingredients", [recipe Ingredients], // FIXME -> NSArray
-                           nil] autorelease];
-    
-    return dico;
-}
-*/
 
 - (void) dealloc {
     _Name = nil;

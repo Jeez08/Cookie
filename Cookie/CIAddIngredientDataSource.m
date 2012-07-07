@@ -2,19 +2,18 @@
 //  CIIngredientDataSource.m
 //  Cookie
 //
-//  Created by Simon Relet on 07/07/12.
+//  Created by Simon Relet on 05/07/12.
 //  Copyright (c) 2012 EPITA. All rights reserved.
 //
 
-#import "CIIngredientDataSource.h"
+#import "CIAddIngredientDataSource.h"
 
-@implementation CIIngredientDataSource
+@implementation CIAddIngredientDataSource
 
 @synthesize ingredientsList = _ingredientsList;
-@synthesize nameColumn = _nameColumn;
-@synthesize quantityColumn = _quantityColumn;
-@synthesize mesureColumn = _mesureColumn;
-@synthesize selectedRecipe = _selectedRecipe;
+@synthesize nameColumn;
+@synthesize quantityColumn;
+@synthesize mesureColumn;
 
 -(id) init {
     self = [super init];
@@ -29,15 +28,15 @@
     [super dealloc];
 }
 
--(void)selectRecipe:(CIRecipe *)recipe {
-    _selectedRecipe = recipe;
-    [self deleteAllIngredients];
-    
-    for (CIIngredient* ingre in [recipe Ingredients]) {
-        [_ingredientsList addObject:ingre];
-    }
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:INGRECHANGE object:self];
+-(void)addIngredientWithName:(NSString*)name quantity:(NSString*)quantity mesure:(NSString*)mesure {
+    CIIngredient *i = [[CIIngredient ingredientWithName:name quantity:[quantity floatValue] unit:mesure] retain];
+    [_ingredientsList addObject:i];
+    [[NSNotificationCenter defaultCenter] postNotificationName:ADDINGRECHANGE object:self];
+}
+
+- (void) deleteIngredientAtIndex:(NSInteger)row {
+    [_ingredientsList removeObjectAtIndex:row];
+    [[NSNotificationCenter defaultCenter] postNotificationName:ADDINGRECHANGE object:self];
 }
 
 -(void)deleteAllIngredients {
@@ -53,11 +52,11 @@
     NSTableCellView *cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
     
     CIIngredient *i = [_ingredientsList objectAtIndex:row];
-    if (tableColumn == _nameColumn)
+    if (tableColumn == nameColumn)
         cell.textField.stringValue = i.name;
-    else if (tableColumn == _quantityColumn)
+    else if (tableColumn == quantityColumn)
         cell.textField.stringValue = [NSString stringWithFormat:@"%f", i.quantity];
-    else if (tableColumn == _mesureColumn)
+    else if (tableColumn == mesureColumn)
         cell.textField.stringValue = i.unit;
     
     return cell;

@@ -17,10 +17,14 @@
 @property (nonatomic, retain) NSImage *Picture;
 @property (nonatomic, copy) NSNumber *Rating;
 @property (nonatomic, copy) NSMutableArray *Ingredients;
-@property (nonatomic, copy) NSTextField *Recipe;
+@property (nonatomic, copy) NSString *Recipe;
+@property (nonatomic) int Preparation;
+@property (nonatomic) int Baking;
+@property (nonatomic) int Rest;
+@property (nonatomic) int NumberOfPeople;
 
--(id)initWithName:(NSString*)name category:(NSString*)category summary:(NSString*)summary picture:(NSImage*)picture rating:(NSNumber*)rating ingredients:(NSMutableArray*)ingredients recipe:(NSTextField*)recipe;
-+(id)recipeWithName:(NSString*)name category:(NSString*)category summary:(NSString*)summary picture:(NSImage*)picture rating:(NSNumber*)rating ingredients:(NSMutableArray*)ingredients recipe:(NSTextField*)recipe;
+-(id)initWithName:(NSString*)name category:(NSString*)category summary:(NSString*)summary picture:(NSImage*)picture rating:(NSNumber*)rating ingredients:(NSMutableArray*)ingredients recipe:(NSString*)recipe preparation:(int)preparation baking:(int)baking rest:(int)rest numberOfPeople:(int)numberOfPeople;
++(id)recipeWithName:(NSString*)name category:(NSString*)category summary:(NSString*)summary picture:(NSImage*)picture rating:(NSNumber*)rating ingredients:(NSMutableArray*)ingredients recipe:(NSString*)recipe preparation:(int)preparation baking:(int)baking rest:(int)rest numberOfPeople:(int)numberOfPeople;
 //+(NSDictionary*)convertRecipe:(CIRecipe*)recipe;
 
 -(id)initWithCoder:(NSCoder *)aDecoder;
