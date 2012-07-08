@@ -12,6 +12,8 @@
 
 @synthesize recipeList = _recipeList;
 @synthesize filterType = _filterType;
+@synthesize searchFilter = _searchFilter;
+@synthesize ratingFilter = _ratingFilter;
 
 - (id) init {
     self = [super init];
@@ -29,16 +31,30 @@
     [_recipeList removeAllObjects];
     NSArray *files = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:directoryPath error:nil];
     
-    NSLog(@"%@", self.filterType);
+    NSLog(@"Catégory : %@", self.filterType);
     BOOL skipTest = [self.filterType isEqualToString:@"Tout"];
+    BOOL isSearching = (_searchFilter != NULL) && ([_searchFilter isNotEqualTo:@""]);
     
     for (NSString *path in files) {
         if ([path hasSuffix:@".meal"]) {
             CIRecipe *r = [[NSKeyedUnarchiver unarchiveObjectWithFile:[directoryPath stringByAppendingPathComponent:path]] retain];
-            if (skipTest || [[r Category] isEqualToString:self.filterType])
-                [_recipeList addObject:r];
+            if (isSearching)
+            {
+                if (([[[r Name] lowercaseString] rangeOfString:[_searchFilter lowercaseString]].length != 0) &&
+                    (skipTest || [[r Category] isEqualToString:_filterType]) &&
+                    ([[r Rating] intValue] >= _ratingFilter))
+                    [_recipeList addObject:r];
+                else
+                    [r release];
+            }
             else
-                [r release];
+            {
+                if ((skipTest || [[r Category] isEqualToString:_filterType]) && 
+                    ([[r Rating] intValue] >= _ratingFilter))
+                            [_recipeList addObject:r];
+                else
+                    [r release];
+            }
         }
     }
 }
@@ -47,6 +63,18 @@
     self.filterType = filterType;
     [self loadRecipe];
     [[NSNotificationCenter defaultCenter] postNotificationName:RECIPECHANGE object:self];
+}
+
+-(void)changeSearchFilter:(NSString*)seachFilter{
+    _searchFilter = seachFilter;
+    [self loadRecipe];
+    [[NSNotificationCenter defaultCenter] postNotificationName:RECIPECHANGE object:self];
+}
+
+-(void)changeRatingFilter:(int)ratingFilter{
+    _ratingFilter = ratingFilter;
+    [self loadRecipe];
+    [[NSNotificationCenter defaultCenter] postNotificationName:RECIPECHANGE object:self];   
 }
 
 -(BOOL)saveRecipeInDB:(CIRecipe *)recipe {

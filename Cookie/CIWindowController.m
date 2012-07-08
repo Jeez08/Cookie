@@ -28,6 +28,7 @@
 @synthesize rating = _rating;
 @synthesize stepper = _stepper;
 @synthesize filter = _filter;
+@synthesize grade = _grade;
 
 - (void) awakeFromNib {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshIngredientList:) name:INGRECHANGE object:nil];
@@ -68,8 +69,14 @@
     [recipeDataSource changeFilterType:[_filter labelForSegment:[_filter selectedSegment]]];
 }
 
+- (IBAction)sortByGrade:(id)sender {
+    CIRecipeDataSource *recipeDataSource = (CIRecipeDataSource*)[_tableView dataSource];
+    [recipeDataSource changeRatingFilter:[[_grade itemObjectValueAtIndex:[_grade indexOfSelectedItem]]intValue]];
+}
+
 -(IBAction)search:(id)sender {
-    NSLog(@"%@", [_search stringValue]);
+    CIRecipeDataSource *recipeDataSource = (CIRecipeDataSource *)[_tableView dataSource];
+    [recipeDataSource changeSearchFilter:[_search stringValue]];
 }
 
 -(void)refreshIngredientList:(NSNotification*)n {
