@@ -15,6 +15,7 @@
 @synthesize quantityColumn = _quantityColumn;
 @synthesize mesureColumn = _mesureColumn;
 @synthesize selectedRecipe = _selectedRecipe;
+@synthesize numberOfPeople = _numberOfPeople;
 
 -(id) init {
     self = [super init];
@@ -29,8 +30,20 @@
     [super dealloc];
 }
 
--(void)selectRecipe:(CIRecipe *)recipe {
+-(NSString*)getSmoothValue:(float)value {
+    NSString *tmp = [NSString stringWithFormat:@"%f", value];
+    NSString *result = [tmp substringToIndex:(tmp.length - 4)];
+    
+    if ([result hasSuffix:@".00"]) {
+        result = [result substringToIndex:(result.length - 3)];
+    }
+    
+    return result;
+}
+
+-(void)selectRecipe:(CIRecipe *)recipe numberOfPeople:(int)numberOfPeople {
     _selectedRecipe = recipe;
+    self.numberOfPeople = numberOfPeople;
     [self deleteAllIngredients];
     
     for (CIIngredient* ingre in [recipe Ingredients]) {
@@ -56,7 +69,7 @@
     if (tableColumn == _nameColumn)
         cell.textField.stringValue = i.name;
     else if (tableColumn == _quantityColumn)
-        cell.textField.stringValue = [NSString stringWithFormat:@"%f", i.quantity];
+        cell.textField.stringValue = [self getSmoothValue:((i.quantity * self.numberOfPeople) / [self.selectedRecipe NumberOfPeople])];
     else if (tableColumn == _mesureColumn)
         cell.textField.stringValue = i.unit;
     

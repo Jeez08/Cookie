@@ -18,9 +18,9 @@
     self = [super init];
     
     if (nil != self) {
-        _name = name;
-        _unit = unit;
-        _quantity = quantity;
+        self.name = name;
+        self.unit = unit;
+        self.quantity = quantity;
     }
     
     return self;
@@ -35,9 +35,9 @@
     self = [super init];
     
     if (nil != self){
-        _name = [[aDecoder decodeObjectForKey:@"Name"] retain];
-        _unit = [[aDecoder decodeObjectForKey:@"Mesure"] retain];
-        _quantity = [aDecoder decodeFloatForKey:@"Quantity"];
+        self.name = [[aDecoder decodeObjectForKey:@"Name"] retain];
+        self.unit = [[aDecoder decodeObjectForKey:@"Mesure"] retain];
+        self.quantity = [aDecoder decodeFloatForKey:@"Quantity"];
     }
     
     return self;
@@ -50,8 +50,8 @@
 }
 
 - (void)dealloc {
-    _name = nil;
-    _unit = nil;
+    self.name = nil;
+    self.unit = nil;
     
     [super dealloc];
 }

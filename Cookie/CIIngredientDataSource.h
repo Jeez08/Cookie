@@ -18,9 +18,11 @@
 @property (assign) IBOutlet NSTableColumn *quantityColumn;
 @property (assign) IBOutlet NSTableColumn *mesureColumn;
 @property (nonatomic, retain) CIRecipe *selectedRecipe;
+@property (nonatomic) int numberOfPeople;
 
--(void)selectRecipe:(CIRecipe*)recipe;
+-(void)selectRecipe:(CIRecipe*)recipe numberOfPeople:(int)numberOfPeople;
 -(void)deleteAllIngredients;
+-(NSString*)getSmoothValue:(float)value;
 
 - (void) dealloc;
 

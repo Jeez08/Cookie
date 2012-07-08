@@ -44,18 +44,22 @@
     [_currentDescription setStringValue:[recipe Summary]];
     [_currentSteps setStringValue:[recipe Recipe]];
     [_numberOfPeople setStringValue:[NSString stringWithFormat:@"%d", [recipe NumberOfPeople]]];
+    [_stepper setIntegerValue:[_numberOfPeople integerValue]];
     [_preparation setStringValue:[NSString stringWithFormat:@"%d", [recipe Preparation]]];
     [_baking setStringValue:[NSString stringWithFormat:@"%d", [recipe Baking]]];
     [_rest setStringValue:[NSString stringWithFormat:@"%d", [recipe Rest]]];
     [_total setStringValue:[NSString stringWithFormat:@"%d", ([recipe Rest] + [recipe Baking] + [recipe Preparation])]];
     [_rating setFloatValue:[[recipe Rating] floatValue]];
     CIIngredientDataSource *ingredientDataSource = (CIIngredientDataSource*)[_ingredientList dataSource];
-    [ingredientDataSource selectRecipe:recipe];
+    [ingredientDataSource selectRecipe:recipe numberOfPeople:[_numberOfPeople intValue]];
 }
 
 -(IBAction)numberOfPeopleHasCahnged:(id)sender {
     [_stepper setIntegerValue:[sender integerValue]];
     [_numberOfPeople setIntegerValue:[sender integerValue]];
+    CIIngredientDataSource *ingredientDataSource = (CIIngredientDataSource*)[_ingredientList dataSource];
+    ingredientDataSource.numberOfPeople = [_numberOfPeople intValue];
+    [_ingredientList reloadData];
 }
 
 -(IBAction)search:(id)sender {

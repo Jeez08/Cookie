@@ -31,18 +31,18 @@ static int uniqueIDGen = 1000;
     self = [super init];
     
     if (nil != self) {
-        _Name = name;
-        _UniqueId = [NSString stringWithFormat:@"%d", uniqueIDGen++];
-        _Category = category;
-        _Summary = summary;
-        _Picture = [picture copy];
-        _Rating = rating;
-        _Ingredients = ingredients;
-        _Recipe = recipe;
-        _Preparation = preparation;
-        _Baking = baking;
-        _Rest = rest;
-        _NumberOfPeople = numberOfPeople;
+        self.Name = name;
+        self.UniqueId = [NSString stringWithFormat:@"%d", uniqueIDGen++];
+        self.Category = category;
+        self.Summary = summary;
+        self.Picture = [picture copy];
+        self.Rating = rating;
+        self.Ingredients = ingredients;
+        self.Recipe = recipe;
+        self.Preparation = preparation;
+        self.Baking = baking;
+        self.Rest = rest;
+        self.NumberOfPeople = numberOfPeople;
     }
     
     return self;
@@ -57,18 +57,18 @@ static int uniqueIDGen = 1000;
     self = [super init];
     
     if (nil != self){
-        _Name = [[aDecoder decodeObjectForKey:@"Name"] retain];
-        _UniqueId = [[aDecoder decodeObjectForKey:@"UniqueID"] retain];
-        _Category = [[aDecoder decodeObjectForKey:@"Category"] retain];
-        _Summary = [[aDecoder decodeObjectForKey:@"Summary"] retain];
-        _Picture = [[aDecoder decodeObjectForKey:@"Picture"] retain];
-        _Rating = [[aDecoder decodeObjectForKey:@"Rating"] retain];
-        _Ingredients = [[aDecoder decodeObjectForKey:@"Ingredients"] retain];
-        _Recipe = [[aDecoder decodeObjectForKey:@"Recipe"] retain];
-        _Preparation = [aDecoder decodeIntForKey:@"Preparation"];
-        _Baking = [aDecoder decodeIntForKey:@"Baking"];
-        _Rest = [aDecoder decodeIntForKey:@"Rest"];
-        _NumberOfPeople = [aDecoder decodeIntForKey:@"NumberOfPeople"];
+        self.Name = [[aDecoder decodeObjectForKey:@"Name"] retain];
+        self.UniqueId = [[aDecoder decodeObjectForKey:@"UniqueID"] retain];
+        self.Category = [[aDecoder decodeObjectForKey:@"Category"] retain];
+        self.Summary = [[aDecoder decodeObjectForKey:@"Summary"] retain];
+        self.Picture = [[aDecoder decodeObjectForKey:@"Picture"] retain];
+        self.Rating = [[aDecoder decodeObjectForKey:@"Rating"] retain];
+        self.Ingredients = [[aDecoder decodeObjectForKey:@"Ingredients"] retain];
+        self.Recipe = [[aDecoder decodeObjectForKey:@"Recipe"] retain];
+        self.Preparation = [aDecoder decodeIntForKey:@"Preparation"];
+        self.Baking = [aDecoder decodeIntForKey:@"Baking"];
+        self.Rest = [aDecoder decodeIntForKey:@"Rest"];
+        self.NumberOfPeople = [aDecoder decodeIntForKey:@"NumberOfPeople"];
     }
     
     return self;
@@ -90,14 +90,14 @@ static int uniqueIDGen = 1000;
 }
 
 - (void) dealloc {
-    _Name = nil;
-    _UniqueId = nil;
-    _Category = nil;
-    _Summary = nil;
-    _Picture = nil;
-    _Rating = nil;
-    _Ingredients = nil;
-    _Recipe = nil;
+    self.Name = nil;
+    self.UniqueId = nil;
+    self.Category = nil;
+    self.Summary = nil;
+    self.Picture = nil;
+    self.Rating = nil;
+    self.Ingredients = nil;
+    self.Recipe = nil;
     
     [super dealloc];
 }

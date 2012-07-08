@@ -212,6 +212,10 @@
         return;
     
     [dataSource addIngredientWithName:nameIngre.stringValue quantity:quantityIngre.stringValue mesure:mesureIngre.stringValue];
+    
+    self.nameIngre.stringValue = @"";
+    self.quantityIngre.stringValue = @"";
+    self.mesureIngre.stringValue = @"";
 }
 
 -(IBAction)deleteRecipe:(id)sender {
