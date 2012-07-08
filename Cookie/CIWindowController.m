@@ -27,6 +27,7 @@
 @synthesize total = _total;
 @synthesize rating = _rating;
 @synthesize stepper = _stepper;
+@synthesize filter = _filter;
 
 - (void) awakeFromNib {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshIngredientList:) name:INGRECHANGE object:nil];
@@ -60,6 +61,11 @@
     CIIngredientDataSource *ingredientDataSource = (CIIngredientDataSource*)[_ingredientList dataSource];
     ingredientDataSource.numberOfPeople = [_numberOfPeople intValue];
     [_ingredientList reloadData];
+}
+
+- (IBAction)SortRecipeList:(id)sender {
+    CIRecipeDataSource *recipeDataSource = (CIRecipeDataSource*)[_tableView dataSource];
+    [recipeDataSource changeFilterType:[_filter labelForSegment:[_filter selectedSegment]]];
 }
 
 -(IBAction)search:(id)sender {

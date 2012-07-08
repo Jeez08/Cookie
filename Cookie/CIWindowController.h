@@ -31,9 +31,11 @@
 @property (assign) IBOutlet NSTextField *total;
 @property (assign) IBOutlet NSLevelIndicator *rating;
 @property (assign) IBOutlet NSStepper *stepper;
+@property (assign) IBOutlet NSSegmentedControl *filter;
 
 -(IBAction)selectedRecipe:(id)sender;
 -(IBAction)numberOfPeopleHasCahnged:(id)sender;
 -(IBAction)search:(id)sender;
+-(IBAction)SortRecipeList:(id)sender;
 
 @end

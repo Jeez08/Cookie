@@ -11,11 +11,13 @@
 @implementation CIRecipeDataSource
 
 @synthesize recipeList = _recipeList;
+@synthesize filterType = _filterType;
 
 - (id) init {
     self = [super init];
     if (self) {
         self.recipeList = [NSMutableArray array];
+        self.filterType = [NSString stringWithString:@"Tout"];
         [self loadRecipe];
     }
     return self;
@@ -26,12 +28,25 @@
     
     [_recipeList removeAllObjects];
     NSArray *files = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:directoryPath error:nil];
+    
+    NSLog(@"%@", self.filterType);
+    BOOL skipTest = [self.filterType isEqualToString:@"Tout"];
+    
     for (NSString *path in files) {
         if ([path hasSuffix:@".meal"]) {
             CIRecipe *r = [[NSKeyedUnarchiver unarchiveObjectWithFile:[directoryPath stringByAppendingPathComponent:path]] retain];
-            [_recipeList addObject:r];
+            if (skipTest || [[r Category] isEqualToString:self.filterType])
+                [_recipeList addObject:r];
+            else
+                [r release];
         }
     }
+}
+
+-(void)changeFilterType:(NSString *)filterType {
+    self.filterType = filterType;
+    [self loadRecipe];
+    [[NSNotificationCenter defaultCenter] postNotificationName:RECIPECHANGE object:self];
 }
 
 -(BOOL)saveRecipeInDB:(CIRecipe *)recipe {
