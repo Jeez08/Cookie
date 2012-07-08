@@ -22,7 +22,7 @@
 }
 
 -(void)loadRecipe {
-    NSString *directoryPath = @"Cookie";
+    NSString *directoryPath = [[NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Cookie"];
     
     [_recipeList removeAllObjects];
     NSArray *files = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:directoryPath error:nil];
@@ -35,7 +35,7 @@
 }
 
 -(BOOL)saveRecipeInDB:(CIRecipe *)recipe {
-    NSString *directoryPath = @"Cookie";
+    NSString *directoryPath = [[NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Cookie"];
     
     [recipe retain];
     NSString *outputName = [[recipe Name] stringByReplacingOccurrencesOfString:@" " withString:@"_"];
@@ -47,7 +47,7 @@
 }
 
 -(BOOL)deleteRecipeFromDB:(CIRecipe *)recipe {
-    NSString *directoryPath = @"Cookie";
+    NSString *directoryPath = [[NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Cookie"];
     
     [recipe retain];
     NSString *outputName = [[recipe Name] stringByReplacingOccurrencesOfString:@" " withString:@"_"];

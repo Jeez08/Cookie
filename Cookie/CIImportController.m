@@ -57,7 +57,7 @@
 }
 
 -(IBAction)import:(id)sender {
-    NSString *directoryPath = @"Cookie";
+    NSString *directoryPath = [[NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Cookie"];
     
     if ([[self fileToImport] isEqualToString:@""]) {
         [self.textLabel setTextColor:[NSColor redColor]];
