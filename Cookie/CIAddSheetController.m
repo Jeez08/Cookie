@@ -218,13 +218,6 @@
     self.mesureIngre.stringValue = @"";
 }
 
--(IBAction)deleteRecipe:(id)sender {
-    CIRecipeDataSource *dataSourceRecipe = (CIRecipeDataSource*)recipeList.dataSource;
-    CIRecipe *selectedRecipe = [dataSourceRecipe tableView:recipeList objectValueForTableColumn:recipeList.highlightedTableColumn row:recipeList.selectedRow];
-    
-    [dataSourceRecipe deleteRecipe:selectedRecipe];
-}
-
 - (void) refreshRecipeList:(NSNotification*)n {
     [self.recipeList reloadData];
 }

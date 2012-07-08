@@ -20,6 +20,7 @@
 -(void)addIngredientWithName:(NSString*)name quantity:(NSString*)quantity mesure:(NSString*)mesure;
 -(void)deleteIngredientAtIndex:(NSInteger)row;
 -(void)deleteAllIngredients;
+-(NSString*)getSmoothValue:(float)value;
 
 - (void) dealloc;
 

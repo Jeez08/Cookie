@@ -28,6 +28,17 @@
     [super dealloc];
 }
 
+-(NSString*)getSmoothValue:(float)value {
+    NSString *tmp = [NSString stringWithFormat:@"%f", value];
+    NSString *result = [tmp substringToIndex:(tmp.length - 4)];
+    
+    if ([result hasSuffix:@".00"]) {
+        result = [result substringToIndex:(result.length - 3)];
+    }
+    
+    return result;
+}
+
 -(void)addIngredientWithName:(NSString*)name quantity:(NSString*)quantity mesure:(NSString*)mesure {
     CIIngredient *i = [[CIIngredient ingredientWithName:name quantity:[quantity floatValue] unit:mesure] retain];
     [_ingredientsList addObject:i];
@@ -55,7 +66,7 @@
     if (tableColumn == nameColumn)
         cell.textField.stringValue = i.name;
     else if (tableColumn == quantityColumn)
-        cell.textField.stringValue = [NSString stringWithFormat:@"%f", i.quantity];
+        cell.textField.stringValue = [self getSmoothValue:i.quantity];
     else if (tableColumn == mesureColumn)
         cell.textField.stringValue = i.unit;
     

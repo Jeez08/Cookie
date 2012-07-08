@@ -58,8 +58,6 @@
 -(IBAction)addRecipe:(id)sender;
 -(IBAction)addIngredient:(id)sender;
 
--(IBAction)deleteRecipe:(id)sender;
-
 -(void)resetAllField;
 -(void)resetAllFieldColor;
 
